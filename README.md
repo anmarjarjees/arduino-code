@@ -1,7 +1,7 @@
 # Arduino-code
 ## Brief and Simple Demonstration About How to Start with Arduino Programming
 
-![Arduino UNO R3](https://github.com/anmarjarjees/arduino-code/images/Arduino_Uno_R3.jpg "Arduino Circuit Board")
+![Arduino UNO R3](https://github.com/anmarjarjees/arduino-code/blob/master/images/Arduino_Uno_R3.jpg)
 
 ## NOTE: 
 You can use VScode to write Arduino sketches (programs):
