@@ -56,9 +56,34 @@ select "Arduino Uno R3". You will have the Arduino Circuit available on the sket
 
 8. After writing your code, you can click "Start Simulation". No need for uploading the code to a real physical Arduino board!
 
+### First Code Files:
+- 01.intro.ino
+- 02.digital-io-pins.ino
+- 03.first-sketch.ino
+
+## Serial Monitor:
+Is a built-in feature that comes with Arduino IDE. It's useful for code troubleshooting and facilitate the communication between the Arduino board and other devices like the computer. 
+In order to work with "Serial Monitor", we need to activate it or open its window first, and we have 3 ways:
+1. First Way: Go to "Tools" menu => Click the "Serial Monitor"
+2. Second Way: Using the HOTKEY CTRL+SHIFT+M (In Mac => COMMAND+OPTIONS+M)
+3. Third Way: Click the small magnifying glass icon on the top right corner
+
+All Arduino boards have at least one serial port. In Arduino UNO board, it's Digital Pins 0 and 1:
+- Digital Pin 0 (RX)
+- Digital Pin 1 (TX)
+
+Notice that these two ports (Pins) cannot be used for digital input/output when using the serial communication. <br>
+You can lear more about [Serial Communication Functions](https://www.arduino.cc/reference/en/language/functions/communication/serial/).
+
+The two functions of Serial Communication that are demonstrated in this repo are:
+- Serial.begin(): Sets the data rate in bits per second (baud) for serial data transmission.
+    -- [Serial.begin() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+- Serial.print(): Prints data to the serial port as human-readable ASCII text.
+    -- [Serial.print() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+
 ## NOTES to Recap:
 ### GitHub Repo and Your Local Folder
-- To connect your local folder with your remote repo:
+- To connect your local folder with your remote repo, my example:
 > git remote add origin https://github.com/anmarjarjees/arduino-code.git
 - To download all the files that only exist in the remote repo:
 > git pull origin master
@@ -91,9 +116,11 @@ OR:
 -- Select the branch that you want to set as a default then click "Update"
 -- Accept the warning of doing these changes "I understand, update the default branch"
 
-
 ### MARKDOWN Language:
 For more refreshing about using Markdown language,
 you can check the official documents of GitHub:
 [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
+
+### Arduino Learning Resources and References:
+[Arduino Tutorial by Paul McWhorter](https://youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP)
