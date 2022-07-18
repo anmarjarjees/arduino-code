@@ -56,7 +56,7 @@ select "Arduino Uno R3". You will have the Arduino Circuit available on the sket
 
 8. After writing your code, you can click "Start Simulation". No need for uploading the code to a real physical Arduino board!
 
-### First Code Files:
+### Code Files#1:
 - 01.intro.ino
 - 02.digital-io-pins.ino
 - 03.first-sketch.ino
@@ -80,6 +80,36 @@ The two functions of Serial Communication that are demonstrated in this repo are
     -- [Serial.begin() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
 - Serial.print(): Prints data to the serial port as human-readable ASCII text.
     -- [Serial.print() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+
+### Code Files#2:
+- 04.led-serial-monitor.ino
+
+## Light Emitting Diode (LED):
+A light-emitting diode (LED) is a semiconductor tiny light source that emits light when current flows through it. Allows Arduino/Genuino boards to simplify the use of the LED.<br>
+This library simplify the use of a LED. It contains many function to manage a LED. A diode is a semiconductor device that essentially acts as a one-way switch for current. It allows current to flow easily in one direction, but severely restricts current from flowing in the opposite direction.
+
+LEDs/Diodes have polarity that is determined by an anode (positive lead) and cathode (negative lead). So they only light up when its legs are oriented properly.
+
+![LED/DIODE Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/diode_symbol.png).
+
+### LED Anode and Cathode:
+- Anode (Positive) lead is longer
+- Cathode (Negative) lead is shorter
+- OR By using the "flat" area/spot on the case, the lead which is closest to the flat spot is the cathode pin
+
+![LED Diagram](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED.png).
+
+You can check this [article about diode](https://www.fluke.com/en-ca/learn/blog/electrical/what-is-a-diode#:~:text=A%20diode%20is%20a%20semiconductor,flowing%20in%20the%20opposite%20direction.)
+
+### Resistor:
+A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resister to make sure that the maximum current is not exceeded.
+
+![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED.png)
+
+![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.png)
+
+Higher resistor values will further lower the current, reducing the brightness of the LED
+======================================================
 
 ## NOTES to Recap:
 ### GitHub Repo and Your Local Folder
