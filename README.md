@@ -43,9 +43,14 @@ You can learn Arduino without buying the actual board (Yes for learning and virt
 - Lessons
 Select "Circuits" => Then click the button "Create new Circuit".
 And you can start building your Circuit.
+![Tinkercad Dashboard Left Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/dashboard-options.jpg)
 
 5. Since we need to work on Arduino Circuit, we can search for Arduino in the search box above the Circuit.
 select "Arduino Uno R3". You will have the Arduino Circuit available on the sketch board
+![Board Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/board-options.jpg)
+
+Notice that we can search for any other component that we need to use in our Arduino projects. For example, we need "breadboard" so we can search for it and just drag it to the workspace.
+![Breadboard with Arduino](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard-arduino.jpg)
 
 6. To start coding the Arduino Circuit, you click the "Code" button at the top:
 - Blocks: Going with the templates/samples to see different built-in samples of tasks
@@ -102,13 +107,23 @@ LEDs/Diodes have polarity that is determined by an anode (positive lead) and cat
 You can check this [article about diode](https://www.fluke.com/en-ca/learn/blog/electrical/what-is-a-diode#:~:text=A%20diode%20is%20a%20semiconductor,flowing%20in%20the%20opposite%20direction.)
 
 ### Resistor:
-A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resister to make sure that the maximum current is not exceeded.
+A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow (resists the flow of a current), adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resister to make sure that the maximum current is not exceeded.
 
 ![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED.png)
 
 ![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.png)
 
 Higher resistor values will further lower the current, reducing the brightness of the LED
+
+### LED Wiring
+Connecting an LED to arduino board:
+- Pin 2 (on Arduino Board) connects the resister (330 ohm). 330 ohm is the standard value to be commonly used in breadboards and other prototyping applications, these 330 ohm resistors make excellent LED current limiters and are great for general use.
+- The resister connects to the LED anode (+). Notice that Tinkercad will give you hints when you hover the mouse like anode/cathode and etc..
+- The LED cathode (-) connects to the Arduino ground pin (GND)
+Please look at the image below for more clarifications:
+
+![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.png)
+
 ======================================================
 
 ## NOTES to Recap:
