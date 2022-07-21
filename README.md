@@ -109,9 +109,9 @@ You can check this [article about diode](https://www.fluke.com/en-ca/learn/blog/
 ### Resistor:
 A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow (resists the flow of a current), adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resister to make sure that the maximum current is not exceeded.
 
-![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED.png)
+![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/Electronic-Lead-Resistors-Array.png)
 
-![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.png)
+![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.png)
 
 Higher resistor values will further lower the current, reducing the brightness of the LED
 
@@ -122,7 +122,7 @@ Connecting an LED to arduino board:
 - The LED cathode (-) connects to the Arduino ground pin (GND)
 Please look at the image below for more clarifications:
 
-![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.png)
+![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.jpg)
 
 ======================================================
 
