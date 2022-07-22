@@ -111,7 +111,11 @@ A resistor is a passive two-terminal electrical component that implements electr
 
 ![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/Electronic-Lead-Resistors-Array.png)
 
+<<<<<<< HEAD
 ![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.png)
+=======
+![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.jpg)
+>>>>>>> 09a7ca80a1e4ff8188a7884dbe22e604d95c89ca
 
 Higher resistor values will further lower the current, reducing the brightness of the LED
 
