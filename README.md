@@ -142,29 +142,34 @@ Where:
 
 After rearranging the formula/equation:
 > I = R / V (To calculate the Current)
-> R = V / I (To calculate the Resistance which is what we need to know)
+> R = V / I (To calculate the Resistance which is what we need to use)
 
 So to determine the minimum acceptable value of the resister, we can use this formula/equation:
 > R = V / I
+
+We need the value of "V" and the value "I" to find "R", we will learn to find them in the next topics. <br>
 
 You can check this video [Ohm's Law](https://www.youtube.com/watch?v=8jB6hDUqN0Y).<br>
 Or read the full article about ["Voltage, Current, Resistance, and Ohm's Law"](https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/all#:~:text=Ohm%20defines%20the%20unit%20of,%2C%20and%20pronounced%20%22ohm%22.)
 
 #### IMPORTANT NOTE:
-LED are what's known as a "non-homic" devices. It introduces something called a "voltage drop" into a circuit, and this will lead to change the amount of current running through it. This number will help you decide how much voltage your circuit will need to supply to the LED. Which means it will affect the voltage value that we use in Ohm's Law equation.
+LED are what's known as a "non-homic" devices. It introduces something called a "voltage drop" into a circuit, and this will lead to change the amount of current running through it. knowing the "Voltage Drop" value for a LED is important as this value/number will help you decide how much voltage your circuit will need to supply to the LED. Which means it will affect the voltage value that we use in Ohm's Law equation.
 
 ##### LED Specifications:
+### Votlage Drop (Forward Voltage):
 When buying a LED it comes with a document that shows all its specifications called "Datasheet". You can check this link about [LED-Basic Red] (https://www.sparkfun.com/products/9590?_ga=2.185358185.1176383297.1658699422-984879093.1658436149), click "Documents" tab then "Datasheet". In the Datasheet PDF file, you will see some tables with categories and values. The item that we need to look for is called "Forward Voltage" of an LED which the "Voltage Drop" of that specific LED. It has Min and Max value so the minimum is the value that we need to know/use to determine the value of the resister. Notice in case if the Datasheet provides Forward Voltage for RED, Green, and Blue Color LED, we use the Red Color value based on our selected LED.
 ![LED Forward Voltage](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-voltage.jpg)
-** We will use the minimum value of 1.8 V based Datasheet table.**
+> ** We will use the minimum value of 1.8 V based Datasheet table that is provided with LED package.**
 
+### The Current:
 Also we can see in the first table of Parameters, the first important parameter is the "Forward Current". You can see a forward current for a Red LED is 20 mA (milliamp: a unit for measuring electrical current which is equal to one thousandth of an ampere.). 
 ![LED Forward Current](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-current.jpg)
-Please remember that although the datasheet says 20 mA, but this is the maximum current that LED can take! So usually, when we do our calculation, ** we should go a little bit lower which is around 10 mA.**
+Please remember that although the datasheet says 20 mA, but this is the maximum current that LED can take! So usually, when we do our calculation:
+ > ** we should go a little bit lower which is around 10 mA.**
 
 
 ### Getting Resister Value (Ohm's Law) in Arduino Project:
-Since we are using Arduino Uno Board pin for the Voltage source (not a 9V Battery for example), and the LED has a specific voltage draw as stated in the note above, so to find the right voltage value to be used in the equation (Ohm's law), we need to include the difference between the voltage that is coming from Arduino board and the specific voltage of the LED itself (voltage drop). <br>
+Since we are using Arduino Uno Board pin for the Voltage source (not a 9V Battery for example), and the LED has a specific voltage drop as stated in the note above, so to find the right voltage value to be used in the equation (Ohm's law), we need to include the difference between the voltage that is coming from Arduino board and the specific voltage of the LED itself (voltage drop). <br>
 So to determine the required voltage value to be used, we use this formula:
 The voltage = Arduino Pin Voltage - LED Voltage Drop (Forward Voltage) <br>
 
@@ -185,7 +190,7 @@ Based on what we have searched above:
 
 As you remember the standard resister value that we used above was 330 ohm which is very close to what we got from the above equation. So we can apply the same standard steps to calculate the desired resister for any LED with any color or datasheet.
 
-======================================================
+---
 
 ## NOTES to Recap:
 ### GitHub Repo and Your Local Folder
