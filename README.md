@@ -3,6 +3,10 @@
 
 ![Arduino UNO R3](https://github.com/anmarjarjees/arduino-code/blob/master/images/Arduino_Uno_R3.jpg)
 
+[Arduino Board - UNO R3](https://docs.arduino.cc/hardware/uno-rev3)
+
+[Arduino Uno Rev3](https://store-usa.arduino.cc/collections/boards/products/arduino-uno-rev3)
+
 ## NOTE: 
 You can use VScode to write Arduino sketches (programs):
 * Step1: Download the official Arduino IDE from www.arduino.cc <br>
@@ -93,29 +97,29 @@ The two functions of Serial Communication that are demonstrated in this repo are
 A light-emitting diode (LED) is a semiconductor tiny light source that emits light when current flows through it. Allows Arduino/Genuino boards to simplify the use of the LED.<br>
 This library simplify the use of a LED. It contains many function to manage a LED. A diode is a semiconductor device that essentially acts as a one-way switch for current. It allows current to flow easily in one direction, but severely restricts current from flowing in the opposite direction.
 
-LEDs/Diodes have polarity that is determined by an anode (positive lead) and cathode (negative lead). So they only light up when its legs are oriented properly.
+LEDs/Diodes have polarity that is determined by an anode (positive lead) and cathode (negative lead). So they only light up when its leads (the positive/negative) are oriented properly.
 
 ![LED/DIODE Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/diode_symbol.png).
 
 ### LED Anode and Cathode:
 - Anode (Positive) lead is longer
 - Cathode (Negative) lead is shorter
-- OR By using the "flat" area/spot on the case, the lead which is closest to the flat spot is the cathode pin
+- OR by using the "flat" area/spot on the case, the lead which is closest to the flat spot is the cathode pin
 
 ![LED Diagram](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED.png).
 
+You can check this [Light-Emitting Diodes (LEDs) article](https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/all)
+
 You can check this [article about diode](https://www.fluke.com/en-ca/learn/blog/electrical/what-is-a-diode#:~:text=A%20diode%20is%20a%20semiconductor,flowing%20in%20the%20opposite%20direction.)
+
+In any board/circuit, LED requires a resister to work.
 
 ### Resistor:
 A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow (resists the flow of a current), adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resister to make sure that the maximum current is not exceeded.
 
 ![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/Electronic-Lead-Resistors-Array.png)
 
-<<<<<<< HEAD
 ![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.png)
-=======
-![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/(https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.jpg)
->>>>>>> 09a7ca80a1e4ff8188a7884dbe22e604d95c89ca
 
 Higher resistor values will further lower the current, reducing the brightness of the LED
 
@@ -127,6 +131,59 @@ Connecting an LED to arduino board:
 Please look at the image below for more clarifications:
 
 ![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.jpg)
+
+### Getting Resister Value (Ohm's Law) in General:
+To determine what value we can use for a resister for some special kinds of LEDs, we can use the Ohm's law, so by combining the elements of "voltage", "current", and "resistance", Ohm developed the formula below:
+> V = I x R (To calculate the Voltage => it's called "Ohm's law")
+Where:
+- V = Voltage in volts
+- I = Current in amps
+- R = Resistance in ohms
+
+After rearranging the formula/equation:
+> I = R / V (To calculate the Current)
+> R = V / I (To calculate the Resistance which is what we need to know)
+
+So to determine the minimum acceptable value of the resister, we can use this formula/equation:
+> R = V / I
+
+You can check this video [Ohm's Law](https://www.youtube.com/watch?v=8jB6hDUqN0Y).<br>
+Or read the full article about ["Voltage, Current, Resistance, and Ohm's Law"](https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/all#:~:text=Ohm%20defines%20the%20unit%20of,%2C%20and%20pronounced%20%22ohm%22.)
+
+#### IMPORTANT NOTE:
+LED are what's known as a "non-homic" devices. It introduces something called a "voltage drop" into a circuit, and this will lead to change the amount of current running through it. This number will help you decide how much voltage your circuit will need to supply to the LED. Which means it will affect the voltage value that we use in Ohm's Law equation.
+
+##### LED Specifications:
+When buying a LED it comes with a document that shows all its specifications called "Datasheet". You can check this link about [LED-Basic Red] (https://www.sparkfun.com/products/9590?_ga=2.185358185.1176383297.1658699422-984879093.1658436149), click "Documents" tab then "Datasheet". In the Datasheet PDF file, you will see some tables with categories and values. The item that we need to look for is called "Forward Voltage" of an LED which the "Voltage Drop" of that specific LED. It has Min and Max value so the minimum is the value that we need to know/use to determine the value of the resister. Notice in case if the Datasheet provides Forward Voltage for RED, Green, and Blue Color LED, we use the Red Color value based on our selected LED.
+![LED Forward Voltage](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-voltage.jpg)
+** We will use the minimum value of 1.8 V based Datasheet table.**
+
+Also we can see in the first table of Parameters, the first important parameter is the "Forward Current". You can see a forward current for a Red LED is 20 mA (milliamp: a unit for measuring electrical current which is equal to one thousandth of an ampere.). 
+![LED Forward Current](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-current.jpg)
+Please remember that although the datasheet says 20 mA, but this is the maximum current that LED can take! So usually, when we do our calculation, ** we should go a little bit lower which is around 10 mA.**
+
+
+### Getting Resister Value (Ohm's Law) in Arduino Project:
+Since we are using Arduino Uno Board pin for the Voltage source (not a 9V Battery for example), and the LED has a specific voltage draw as stated in the note above, so to find the right voltage value to be used in the equation (Ohm's law), we need to include the difference between the voltage that is coming from Arduino board and the specific voltage of the LED itself (voltage drop). <br>
+So to determine the required voltage value to be used, we use this formula:
+The voltage = Arduino Pin Voltage - LED Voltage Drop (Forward Voltage) <br>
+
+The formula/equation:
+> R = (Arduino Pin Voltage - LED Forward Voltage) / I
+We need to refer to the board documentation to know the Pin voltage, if you click the same link that provided at the beginning of this README file about [Arduino Uno Rev3](https://store-usa.arduino.cc/collections/boards/products/arduino-uno-rev3), then go to documentation tab (this tab will appear when you scroll down the page), then go to the topic "Input and Output", you will see this text:<br>
+"Each of the 14 digital pins on the Uno can be used as an input or output, using pinMode(),digitalWrite(), and digitalRead() functions. They operate at 5 volts. Each pin can provide or receive 20 mA as recommended operating condition and has an internal pull-up resistor (disconnected by default) of 20-50k ohm." <br>
+** So 5V is the value for "Arduino Pin Voltage" **
+
+#### Our Formula with the values:
+Based on what we have searched above:
+- LED Current: 10mA
+- LED Forward Voltage (Voltage Drop): 1.8V
+- Arduino Pin 2 Output Voltage: 5V (Max)
+
+> R = (Arduino Pin Voltage - LED Forward Voltage) / I
+> R = (5V - 1.8V)/10mA = 320 ohm
+
+As you remember the standard resister value that we used above was 330 ohm which is very close to what we got from the above equation. So we can apply the same standard steps to calculate the desired resister for any LED with any color or datasheet.
 
 ======================================================
 
