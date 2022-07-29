@@ -65,7 +65,7 @@ Notice that we can search for any other component that we need to use in our Ard
 
 8. After writing your code, you can click "Start Simulation". No need for uploading the code to a real physical Arduino board!
 
-### Code Files#1:
+### Code Files:
 - 01.intro.ino
 - 02.digital-io-pins.ino
 - 03.first-sketch.ino
@@ -90,7 +90,7 @@ The two functions of Serial Communication that are demonstrated in this repo are
 - Serial.print(): Prints data to the serial port as human-readable ASCII text.
     -- [Serial.print() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
 
-### Code Files#2:
+### Code Files:
 - 04.led-serial-monitor.ino
 
 ## Light Emitting Diode (LED):
@@ -122,15 +122,6 @@ A resistor is a passive two-terminal electrical component that implements electr
 ![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.png)
 
 Higher resistor values will further lower the current, reducing the brightness of the LED
-
-### LED Wiring
-Connecting an LED to arduino board:
-- Pin 2 (on Arduino Board) connects the resister (330 ohm). 330 ohm is the standard value to be commonly used in breadboards and other prototyping applications, these 330 ohm resistors make excellent LED current limiters and are great for general use.
-- The resister connects to the LED anode (+). Notice that Tinkercad will give you hints when you hover the mouse like anode/cathode and etc..
-- The LED cathode (-) connects to the Arduino ground pin (GND)
-Please look at the image below for more clarifications:
-
-![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.jpg)
 
 ### Getting Resister Value (Ohm's Law) in General:
 To determine what value we can use for a resister for some special kinds of LEDs, we can use the Ohm's law, so by combining the elements of "voltage", "current", and "resistance", Ohm developed the formula below:
@@ -167,7 +158,6 @@ Also we can see in the first table of Parameters, the first important parameter 
 Please remember that although the datasheet says 20 mA, but this is the maximum current that LED can take! So usually, when we do our calculation:
  > ** we should go a little bit lower which is around 10 mA.**
 
-
 ### Getting Resister Value (Ohm's Law) in Arduino Project:
 Since we are using Arduino Uno Board pin for the Voltage source (not a 9V Battery for example), and the LED has a specific voltage drop as stated in the note above, so to find the right voltage value to be used in the equation (Ohm's law), we need to include the difference between the voltage that is coming from Arduino board and the specific voltage of the LED itself (voltage drop). <br>
 So to determine the required voltage value to be used, we use this formula:
@@ -188,8 +178,82 @@ Based on what we have searched above:
 > R = (Arduino Pin Voltage - LED Forward Voltage) / I
 > R = (5V - 1.8V)/10mA = 320 ohm
 
-As you remember the standard resister value that we used above was 330 ohm which is very close to what we got from the above equation. So we can apply the same standard steps to calculate the desired resister for any LED with any color or datasheet.
+NOTE:
+The standard resister value is 330 ohm to be commonly used in breadboards and other prototyping applications, these 330 ohm resistors make excellent LED current limiters and are great for general use. 330 ohm is very close to what we got from the above equation. So we can apply the same standard steps to calculate the desired resister for any LED with any color or datasheet.
 
+### LED Circuit and Coding:
+Starting with the Hardware first by building the LED circuit
+#### LED Wiring
+Connecting an LED to arduino board:
+- Pin 8 (on Arduino Board) as a voltage source will be connected to the one side of a resister. 
+- The resister is 330 ohm. One end has to be placed on the same line as the Pin2 wire which is Line 2 in the breadboard. 
+NOTE: 
+You can specify the value of the resister exactly plus the measurement unit with the help of the inspector popup window that appears when you select an item in the Tinkercad workspace:
+![Resister Inspector Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/resister-inspector-options.jpg)
+
+- The other side of the resister connects to the LED anode (+) which is the longer side of the LED. Also they both have to be placed in the same line which is Line 2 also. Notice that Tinkercad will give you hints when you hover the mouse like anode/cathode and etc..
+![LED Cathode](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-Cathode.jpg)
+![LED Anode](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-Anode.jpg)
+- The LED cathode (-) connects to the Arduino ground pin (GND)
+Please look at the image below for more clarifications:
+
+![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.jpg)
+
+### Code Files:
+Now you can start our code to light the LED circuit:<b>
+Opening the same code file "04.led-serial-monitor.ino" and add some changes based on the pin that we used in the Hardware connection:
+- 05.led-circuit-work1.ino
+
+As it was explained above, you can click "Code" button, then select "Text" from the dropdown list and start writing your code.
+![Coding Sample](https://github.com/anmarjarjees/arduino-code/blob/master/images/coding-sample.jpg)
+
+Then you can run your code by clicking "Start Simulation" button.<br>
+The LED will be on for a second then off for half a second and so on...<br>
+NOTES: 
+- "Simulation" button is a toggle button between to actions: Start/Stop
+- When you are in simulation mode, you cannot make any changes in our your code in your circuit. You have to click "Stop Simulation" button
+- To see the output of Arduino built-in functions,
+You can use the "Serial Monitor" it's like VSC terminal:
+![Serial Monitor](https://github.com/anmarjarjees/arduino-code/blob/master/images/serial-monitor.jpg)
+
+### Code Files:
+Now we can few changes to our code, please refer to the file:
+- 06.led-circuit-work2.ino
+
+### LED Traffic Signal Circuit:
+Practising what we have learned to create LED Traffic Signal Circuit:
+#### Hardware Connection:
+For this project, we need to control three separate digital interfaces:
+- Red LED => using pin 12
+- Yellow LED => using pin 11
+- Green LED => using pin 10
+
+- Breadboard
+- 3 resisters to be plugged into the breadboard:
+![Three Resisters on Breadboard](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-resisters-board.jpg)
+- Connect the 3 LED (as we did with one LED) if you have all the physical components. When using "Autodesk Tinkercad", you can select and LED and change its color from the inspector popup window:
+
+![Three Color Leds](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-color-led.jpg)
+
+
+- Connect one end of each resister to its corresponding LED, and the other end will be connected to arduino pins as stated above. Notice in the image below, I used different color for the wires for more clarity:
+
+![Three Led Wire Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-led-wire-connection.jpg)
+
+- Connecting the other leg of each LED to the ground as we did in the first simple circuit for one LED. Since we have three LED, we can use the breadboard common ground. Connect the cathode leg for each LED to the negative line of the breadboard  as shown below:
+led-cathode-negative-line.jpg
+![LED Cathode Negative Line Connections](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-cathode-negative-line.jpg)
+
+- Finally, connecting the negative line on the breadboard that has the three connections from the LED to the Ground Pin (GND) of Arduino board.
+
+![LED Traffic Signal Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-traffic-signal-connection.jpg)
+
+### Code Files:
+You can use the code editor with "Text" option to write your code. In the code editor window, click the "Serial Monitor" to see the printed text output also.
+
+- 07.led-traffic-signal.ino
+
+![Led traffic code - Serial Monitor](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-traffic-code-serial-output.jpg)
 ---
 
 ## NOTES to Recap:
@@ -234,4 +298,4 @@ you can check the official documents of GitHub:
 
 
 ### Arduino Learning Resources and References:
-[Arduino Tutorial by Paul McWhorter](https://youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP)
+- [Arduino Tutorial by Paul McWhorter](https://youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP)
