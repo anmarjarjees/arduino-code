@@ -3,9 +3,17 @@
 
 ![Arduino UNO R3](https://github.com/anmarjarjees/arduino-code/blob/master/images/Arduino_Uno_R3.jpg)
 
+Arduino is an open-source electronic computing platform. It has two components:
+- Hardware: Arduino Circuit Board => Arduino Uno R3 (It has a computing system/processor)
+- Software: Arduino IDE to write our code for controlling the Arduino board. Using Arduino language which is based on C/C++ language
+
+It's Easy-to-use hardware and software and it's intended for anyone who is interested in creating interactive objects or environments. 
+
 [Arduino Board - UNO R3](https://docs.arduino.cc/hardware/uno-rev3)
 
 [Arduino Uno Rev3](https://store-usa.arduino.cc/collections/boards/products/arduino-uno-rev3)
+
+Arduino Board is connected to the computer through a USB cable.
 
 ## NOTE: 
 You can use VScode to write Arduino sketches (programs):
@@ -28,7 +36,11 @@ void loop() {
 }
 ```
 
-3. Programs written in Arduino IDE are called "sketches"
+3. Some of the Arduino Basic Terminologies:
+  - "sketches" are programs written in Arduino IDE that can run on Arduino board
+  - "pin" is either an input or output port that is connected to something in the breadboard. For example, Output to an LED or Input from a Push Button
+  - "digital" is the voltage value to be on/off, 1/0, or in Arduino C language is "HIGH" or "LOW"
+  - "analog" is the voltage with more realistic value that can be ranged from 0 to 255 PWM. Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. Where 0 can represent the 0 volt and 255 can represent 5 volt. PWD is a technique used in controlling the brightness of LED, speed control of DC motor,  or where you have to get analog output with digital means. 
 
 4. Using Arduino Uno Board on COMX (X will be the port number)
 
@@ -233,7 +245,7 @@ For this project, we need to control three separate digital interfaces:
 ![Three Resisters on Breadboard](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-resisters-board.jpg)
 - Connect the 3 LED (as we did with one LED) if you have all the physical components. When using "Autodesk Tinkercad", you can select and LED and change its color from the inspector popup window:
 
-![Three Color Leds](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-color-led.jpg)
+![Three Color LEDs](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-color-led.jpg)
 
 
 - Connect one end of each resister to its corresponding LED, and the other end will be connected to arduino pins as stated above. Notice in the image below, I used different color for the wires for more clarity:
@@ -254,6 +266,39 @@ You can use the code editor with "Text" option to write your code. In the code e
 - 07.led-traffic-signal.ino
 
 ![Led traffic code - Serial Monitor](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-traffic-code-serial-output.jpg)
+
+
+## Working with Push Buttons:
+Push buttons has different shapes to provide arduino with an input signal. Push buttons can be explained as simple power controlling switches of a machine or appliance. A switch is a component which controls the open-ness or closed-ness of an electric circuit. It connects two points in a circle when you press it:
+![Pushbutton](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-symbol.png)
+The current can only flow through a circuit when the button is pressed for connecting the circuit.
+![Simple Pushbutton Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/simple-pushbutton-circuit.jpg)
+
+### Types of Pushbutton:
+Pushbutton can be either one of these two distinct types or categories:
+- Momentary Pushbutton/Switch: Are switches/push-buttons which only remain in their "ON" (active) state as long as they're being actuated (pressed, held, pushed, magnetized,  etc.). If they're not being actuated, they remain in their "off" state. Think about this type of switches like the keys of your keyboard, when pressing the letter "A" and hold down the key, it will keep printing/typing the letter "A" until release the button.
+![Momentary Pushbutton Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/momentary-pushbutton-symbol.jpg)
+- Maintained Pushbutton/Switch: Are switched/push-buttons that stay in one state until actuated into a new one, and then remain in that state until acted upon once again. Like the light switches on a wall. Maintained switches are great for set-it-and-leave it applications like turning power on and off.
+![Maintained Switch Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/maintained-switch-symbol.png)
+
+Push buttons can be arranged to two different cases:
+- Normally Open (NO) => The switch is normally open, so we have an open circuit. Has to be pressed/activated/actuated to make the connection between the terminals. If you push/press it, there will be a close circuit so the current will run through it.
+![Normally Open Switch](https://github.com/anmarjarjees/arduino-code/blob/master/images/normally-open-switch.jpg)
+
+- Normally Closed (NC) => The switch is normally closed, so we have a closed circuit. Has to be pressed/activated/actuated to break the connection between the terminals. If you push/press it, there will be an open circuit so the current will NOT run through it.
+![Normally Closed Switch](https://github.com/anmarjarjees/arduino-code/blob/master/images/normally-closed-switch.jpg)
+
+This type of (NC) buttons are usually used in Emergency Stop button or the safety Stop buttons as we have on treadmill 
+
+You can [read more about push buttons](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all)
+
+Look at the image below as an example of one type of using pushbutton:
+When the push button is pressed:
+- A connection is created between Terminal 1 (T1) and Terminal 2 (T2)
+OR:
+- A connection is created between Terminal 3 (T3) and Terminal 4 (T4)
+![Pushbutton Terminal Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-terminal-connection.jpg)
+
 ---
 
 ## NOTES to Recap:

@@ -9,6 +9,11 @@ We need to keep the LED/Light on for certain period of time,
 so we will use Arduino built-in function named "delay()"
 The syntax:
 delay(ms) => ms is the number/value of Milliseconds to Pause
+
+Examples:
+1000 MS = 1 Second of delay
+5000 MS = 5 Seconds of delay
+500 MS = .5 Second of delay
 */
 
 /*
@@ -16,6 +21,12 @@ Coding recommendation to create a variable to hold the pin number:
 */
 
 int LED = 13; // variable named "LED" with the value of "13", and the data type is integer
+
+/*
+NOTE:
+Remember that the value of the variable "LED" will be the value of the pin that we need to target in the board
+as we will use/place it in the pinMode() function as the first parameter to represent the pin
+*/
 void setup()
 {
     // Put your setup code here, to run once:
@@ -31,6 +42,7 @@ void loop()
     // Put your main code here, to run repeatedly:
 
     // Step#2: Turning the LED on the board to be on:
+    // NOTE: LED is always OFF by default
     digitalWrite(LED, HIGH);
 
     /*
