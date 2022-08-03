@@ -15,6 +15,20 @@ It's Easy-to-use hardware and software and it's intended for anyone who is inter
 
 Arduino Board is connected to the computer through a USB cable.
 
+### MCU (MCU for microcontroller unit)
+A microcontroller is a small computer on a single VLSI (Very Large Scale Integration) integrated circuit (IC) chip. A microcontroller contains one or more CPUs (processor cores) along with memory and programmable input/output peripherals. You can check this article about [Microcontroller](https://en.wikipedia.org/wiki/Microcontroller)
+
+
+### Breadboards:
+Breadboard is anything you use to prototype electronics. When working on electronic circuits, breadboard will be the white, plastic, and solderless panel (board) also know as a "Protoboard". It helps to run and test any electronic circuit without the need of soldering.
+![Breadboard](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard.jpg)
+- Every breadboard has rows labeled 1-N and 2 sets of columns labeled a-e and f-j. The first set of columns: a, b, c, d, and e are connected together and the second set of columns: f, g, h, i, and j are connected together. the two sets are separated by a middle grove.
+- All of the terminals on the same row are connected. Columns are not connected. The image below shows the green lines for row connections and the orange for columns connections (notice that I only highlighted just 4 as a sample), for example using the point (terminal) a1, b1, c1, d1, or e1 is the same.
+![Breadboard Rows/Columns Connections](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard-r-c-connections.jpg)
+- The positive (red) and the negative/ground (blue or black) rails on the two sides are commonly used to connect components to power, ground, or both. We can use any terminal to do the job along the negative or the positive rail 
+
+You can check this article ["How to use a breadboard"](https://www.losant.com/blog/how-to-use-a-breadboard#:~:text=Along%20each%20side%20of%20a,be%20connected%20to%20the%20rails.) to learn the basic of breadboards. Or this article ["How to Use a Breadboard (with Video Example)"](https://www.instructables.com/How-to-use-a-Breadboard-with-example/)
+
 ## NOTE: 
 You can use VScode to write Arduino sketches (programs):
 * Step1: Download the official Arduino IDE from www.arduino.cc <br>
@@ -38,7 +52,7 @@ void loop() {
 
 3. Some of the Arduino Basic Terminologies:
   - "sketches" are programs written in Arduino IDE that can run on Arduino board
-  - "pin" is either an input or output port that is connected to something in the breadboard. For example, Output to an LED or Input from a Push Button
+  - "pin" is either an input or output port that is connected to something in the breadboard. For example, Output to an LED or Input from a Push Button. You can learn more about ["Digital Pins"](https://docs.arduino.cc/learn/microcontrollers/digital-pins) from Arduino docs.
   - "digital" is the voltage value to be on/off, 1/0, or in Arduino C language is "HIGH" or "LOW"
   - "analog" is the voltage with more realistic value that can be ranged from 0 to 255 PWM. Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. Where 0 can represent the 0 volt and 255 can represent 5 volt. PWD is a technique used in controlling the brightness of LED, speed control of DC motor,  or where you have to get analog output with digital means. 
 
@@ -77,7 +91,7 @@ Notice that we can search for any other component that we need to use in our Ard
 
 8. After writing your code, you can click "Start Simulation". No need for uploading the code to a real physical Arduino board!
 
-### Code Files:
+#### Code Files:
 - 01.intro.ino
 - 02.digital-io-pins.ino
 - 03.first-sketch.ino
@@ -102,7 +116,7 @@ The two functions of Serial Communication that are demonstrated in this repo are
 - Serial.print(): Prints data to the serial port as human-readable ASCII text.
     -- [Serial.print() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
 
-### Code Files:
+#### Code Files:
 - 04.led-serial-monitor.ino
 
 ## Light Emitting Diode (LED):
@@ -111,7 +125,7 @@ This library simplify the use of a LED. It contains many function to manage a LE
 
 LEDs/Diodes have polarity that is determined by an anode (positive lead) and cathode (negative lead). So they only light up when its leads (the positive/negative) are oriented properly.
 
-![LED/DIODE Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/diode_symbol.png).
+![LED/DIODE Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/diode_symbol.jpg).
 
 ### LED Anode and Cathode:
 - Anode (Positive) lead is longer
@@ -124,10 +138,10 @@ You can check this [Light-Emitting Diodes (LEDs) article](https://learn.sparkfun
 
 You can check this [article about diode](https://www.fluke.com/en-ca/learn/blog/electrical/what-is-a-diode#:~:text=A%20diode%20is%20a%20semiconductor,flowing%20in%20the%20opposite%20direction.)
 
-In any board/circuit, LED requires a resister to work.
+In any board/circuit, LED requires a resistor to work.
 
 ### Resistor:
-A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow (resists the flow of a current), adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resister to make sure that the maximum current is not exceeded.
+A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow (resists the flow of a current), adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resistor to make sure that the maximum current is not exceeded.
 
 ![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/Electronic-Lead-Resistors-Array.png)
 
@@ -135,8 +149,8 @@ A resistor is a passive two-terminal electrical component that implements electr
 
 Higher resistor values will further lower the current, reducing the brightness of the LED
 
-### Getting Resister Value (Ohm's Law) in General:
-To determine what value we can use for a resister for some special kinds of LEDs, we can use the Ohm's law, so by combining the elements of "voltage", "current", and "resistance", Ohm developed the formula below:
+### Getting Resistor Value (Ohm's Law) in General:
+To determine what value we can use for a resistor for some special kinds of LEDs, we can use the Ohm's law, so by combining the elements of "voltage", "current", and "resistance", Ohm developed the formula below:
 > V = I x R (To calculate the Voltage => it's called "Ohm's law")
 Where:
 - V = Voltage in volts
@@ -147,7 +161,7 @@ After rearranging the formula/equation:
 > I = R / V (To calculate the Current)
 > R = V / I (To calculate the Resistance which is what we need to use)
 
-So to determine the minimum acceptable value of the resister, we can use this formula/equation:
+So to determine the minimum acceptable value of the resistor, we can use this formula/equation:
 > R = V / I
 
 We need the value of "V" and the value "I" to find "R", we will learn to find them in the next topics. <br>
@@ -159,8 +173,8 @@ Or read the full article about ["Voltage, Current, Resistance, and Ohm's Law"](h
 LED are what's known as a "non-homic" devices. It introduces something called a "voltage drop" into a circuit, and this will lead to change the amount of current running through it. knowing the "Voltage Drop" value for a LED is important as this value/number will help you decide how much voltage your circuit will need to supply to the LED. Which means it will affect the voltage value that we use in Ohm's Law equation.
 
 ##### LED Specifications:
-### Votlage Drop (Forward Voltage):
-When buying a LED it comes with a document that shows all its specifications called "Datasheet". You can check this link about [LED-Basic Red] (https://www.sparkfun.com/products/9590?_ga=2.185358185.1176383297.1658699422-984879093.1658436149), click "Documents" tab then "Datasheet". In the Datasheet PDF file, you will see some tables with categories and values. The item that we need to look for is called "Forward Voltage" of an LED which the "Voltage Drop" of that specific LED. It has Min and Max value so the minimum is the value that we need to know/use to determine the value of the resister. Notice in case if the Datasheet provides Forward Voltage for RED, Green, and Blue Color LED, we use the Red Color value based on our selected LED.
+### Voltage Drop (Forward Voltage):
+When buying a LED it comes with a document that shows all its specifications called "Datasheet". You can check this link about [LED-Basic Red] (https://www.sparkfun.com/products/9590?_ga=2.185358185.1176383297.1658699422-984879093.1658436149), click "Documents" tab then "Datasheet". In the Datasheet PDF file, you will see some tables with categories and values. The item that we need to look for is called "Forward Voltage" of an LED which the "Voltage Drop" of that specific LED. It has Min and Max value so the minimum is the value that we need to know/use to determine the value of the resistor. Notice in case if the Datasheet provides Forward Voltage for RED, Green, and Blue Color LED, we use the Red Color value based on our selected LED.
 ![LED Forward Voltage](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-voltage.jpg)
 > ** We will use the minimum value of 1.8 V based Datasheet table that is provided with LED package.**
 
@@ -170,7 +184,7 @@ Also we can see in the first table of Parameters, the first important parameter 
 Please remember that although the datasheet says 20 mA, but this is the maximum current that LED can take! So usually, when we do our calculation:
  > ** we should go a little bit lower which is around 10 mA.**
 
-### Getting Resister Value (Ohm's Law) in Arduino Project:
+### Getting Resistor Value (Ohm's Law) in Arduino Project:
 Since we are using Arduino Uno Board pin for the Voltage source (not a 9V Battery for example), and the LED has a specific voltage drop as stated in the note above, so to find the right voltage value to be used in the equation (Ohm's law), we need to include the difference between the voltage that is coming from Arduino board and the specific voltage of the LED itself (voltage drop). <br>
 So to determine the required voltage value to be used, we use this formula:
 The voltage = Arduino Pin Voltage - LED Voltage Drop (Forward Voltage) <br>
@@ -191,19 +205,19 @@ Based on what we have searched above:
 > R = (5V - 1.8V)/10mA = 320 ohm
 
 NOTE:
-The standard resister value is 330 ohm to be commonly used in breadboards and other prototyping applications, these 330 ohm resistors make excellent LED current limiters and are great for general use. 330 ohm is very close to what we got from the above equation. So we can apply the same standard steps to calculate the desired resister for any LED with any color or datasheet.
+The standard resistor value is 330 ohm to be commonly used in breadboards and other prototyping applications, these 330 ohm resistors make excellent LED current limiters and are great for general use. 330 ohm is very close to what we got from the above equation. So we can apply the same standard steps to calculate the desired resistor for any LED with any color or datasheet.
 
 ### LED Circuit and Coding:
 Starting with the Hardware first by building the LED circuit
 #### LED Wiring
 Connecting an LED to arduino board:
-- Pin 8 (on Arduino Board) as a voltage source will be connected to the one side of a resister. 
-- The resister is 330 ohm. One end has to be placed on the same line as the Pin2 wire which is Line 2 in the breadboard. 
+- Pin 8 (on Arduino Board) as a voltage source will be connected to the one side of a resistor. 
+- The resistor is 330 ohm. One end has to be placed on the same line as the Pin2 wire which is Line 2 in the breadboard. 
 NOTE: 
-You can specify the value of the resister exactly plus the measurement unit with the help of the inspector popup window that appears when you select an item in the Tinkercad workspace:
-![Resister Inspector Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/resister-inspector-options.jpg)
+You can specify the value of the resistor exactly plus the measurement unit with the help of the inspector popup window that appears when you select an item in the Tinkercad workspace:
+![Resistor Inspector Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/resistor-inspector-options.jpg)
 
-- The other side of the resister connects to the LED anode (+) which is the longer side of the LED. Also they both have to be placed in the same line which is Line 2 also. Notice that Tinkercad will give you hints when you hover the mouse like anode/cathode and etc..
+- The other side of the resistor connects to the LED anode (+) which is the longer side of the LED. Also they both have to be placed in the same line which is Line 2 also. Notice that Tinkercad will give you hints when you hover the mouse like anode/cathode and etc..
 ![LED Cathode](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-Cathode.jpg)
 ![LED Anode](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-Anode.jpg)
 - The LED cathode (-) connects to the Arduino ground pin (GND)
@@ -211,7 +225,7 @@ Please look at the image below for more clarifications:
 
 ![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.jpg)
 
-### Code Files:
+#### Code Files:
 Now you can start our code to light the LED circuit:<b>
 Opening the same code file "04.led-serial-monitor.ino" and add some changes based on the pin that we used in the Hardware connection:
 - 05.led-circuit-work1.ino
@@ -228,7 +242,7 @@ NOTES:
 You can use the "Serial Monitor" it's like VSC terminal:
 ![Serial Monitor](https://github.com/anmarjarjees/arduino-code/blob/master/images/serial-monitor.jpg)
 
-### Code Files:
+#### Code Files:
 Now we can few changes to our code, please refer to the file:
 - 06.led-circuit-work2.ino
 
@@ -241,18 +255,17 @@ For this project, we need to control three separate digital interfaces:
 - Green LED => using pin 10
 
 - Breadboard
-- 3 resisters to be plugged into the breadboard:
-![Three Resisters on Breadboard](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-resisters-board.jpg)
+- 3 Resistors to be plugged into the breadboard:
+![Three Resistor on Breadboard](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-Resistor-board.jpg)
 - Connect the 3 LED (as we did with one LED) if you have all the physical components. When using "Autodesk Tinkercad", you can select and LED and change its color from the inspector popup window:
 
 ![Three Color LEDs](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-color-led.jpg)
 
-
-- Connect one end of each resister to its corresponding LED, and the other end will be connected to arduino pins as stated above. Notice in the image below, I used different color for the wires for more clarity:
+- Connect one end of each resistor to its corresponding LED, and the other end will be connected to arduino pins as stated above. Notice in the image below, I used different color for the wires for more clarity:
 
 ![Three Led Wire Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-led-wire-connection.jpg)
 
-- Connecting the other leg of each LED to the ground as we did in the first simple circuit for one LED. Since we have three LED, we can use the breadboard common ground. Connect the cathode leg for each LED to the negative line of the breadboard  as shown below:
+- Connecting the other leg of each LED to the ground as we did in the first simple circuit for one LED. Since we have three LED, we can use the breadboard common ground (Usually the the strips marked"-"). Connect the cathode leg for each LED to the negative line of the breadboard  as shown below:
 led-cathode-negative-line.jpg
 ![LED Cathode Negative Line Connections](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-cathode-negative-line.jpg)
 
@@ -260,13 +273,12 @@ led-cathode-negative-line.jpg
 
 ![LED Traffic Signal Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-traffic-signal-connection.jpg)
 
-### Code Files:
+#### Code Files:
 You can use the code editor with "Text" option to write your code. In the code editor window, click the "Serial Monitor" to see the printed text output also.
 
 - 07.led-traffic-signal.ino
 
 ![Led traffic code - Serial Monitor](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-traffic-code-serial-output.jpg)
-
 
 ## Working with Push Buttons:
 Push buttons has different shapes to provide arduino with an input signal. Push buttons can be explained as simple power controlling switches of a machine or appliance. A switch is a component which controls the open-ness or closed-ness of an electric circuit. It connects two points in a circle when you press it:
@@ -281,7 +293,7 @@ Pushbutton can be either one of these two distinct types or categories:
 - Maintained Pushbutton/Switch: Are switched/push-buttons that stay in one state until actuated into a new one, and then remain in that state until acted upon once again. Like the light switches on a wall. Maintained switches are great for set-it-and-leave it applications like turning power on and off.
 ![Maintained Switch Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/maintained-switch-symbol.png)
 
-Push buttons can be arranged to two different cases:
+Push buttons can be also arranged into two different cases/types:
 - Normally Open (NO) => The switch is normally open, so we have an open circuit. Has to be pressed/activated/actuated to make the connection between the terminals. If you push/press it, there will be a close circuit so the current will run through it.
 ![Normally Open Switch](https://github.com/anmarjarjees/arduino-code/blob/master/images/normally-open-switch.jpg)
 
@@ -293,13 +305,114 @@ This type of (NC) buttons are usually used in Emergency Stop button or the safet
 You can [read more about push buttons](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all)
 
 Look at the image below as an example of one type of using pushbutton:
-When the push button is pressed:
+When the pushbutton is pressed:
 - A connection is created between Terminal 1 (T1) and Terminal 2 (T2)
 OR:
 - A connection is created between Terminal 3 (T3) and Terminal 4 (T4)
 ![Pushbutton Terminal Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-terminal-connection.jpg)
 
----
+### VCC and GND
+VCC Abbreviation of "Voltage Common Collector" is an electronics designation that refers to voltage from a power supply  (input) of a device (To supply voltage for an integrated circuit). GND Abbreviation of "Ground" is the the reference point against which the VCC is compared. It can be positive or negative compared to GND. When the VCC is at zero colts, it is called the ground.<br>
+- Vcc => refers to the "Power Supply" voltage
+- Vee => refers to the "Emitter" voltage
+- Vss => refers to the "Source" voltage
+- Vdd => refers to the "Drain" voltage
+
+### Implementing/Adding a switch/pushbutton on Arduino
+To plug/use a switch/pushbutton in an Arduino circuit, we use two methods:
+- Pullup Resistor Circuit [used with Active Low]
+- Pulldown Resistor Circuit [used with Active High]
+
+When push buttons are used in a circuit, we refer to them as:
+- Active High switch/pushbutton
+- Active Low switch/pushbutton
+
+#### Pullup Circuit OR Active Low Circuit
+The arrangement for an active low pushbutton: 
+- Voltage Source: VCC (Voltage Common Collector) => 5V to resistor
+- Pullup Resistor to pushbutton
+- Pushbutton/Switch connected to ground
+- Pin 10 mode is INPUT => This controller (Arduino Pin) will be connected between the Pullup Resistor and the Push button to read the value of the Active Low pushbutton
+>> VCC (5V) = Connected to => Pullup Resistor then Pushbutton = Connected to => Ground
+>> Pullup Resistor <=> Pin 10 <=> Pushbutton
+![Pullup Resistor Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/pullup_resistor_circuit.jpg)
+
+#### Pulldown Circuit OR Active High Circuit
+The arrangement for an active hight pushbutton: 
+- Voltage Source: VCC (Voltage Common Collector) => 5V to resistor
+- Pushbutton to Pulldown Resistor 
+- Pulldown Resistor to ground
+- Pin 10 mode is INPUT => This controller (Arduino Pin) will be connected between the Pulldown Resistor and the Push button to read the value of the Active High pushbutton
+>> VCC (5V) = Connected to => Pushbutton then Pulldown Resistor = Connected to => Ground
+>> Pulldown Resistor <=> Pin 10 <=> Pushbutton
+![Pulldown Resistor Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/pulldown_resistor_circuit.jpg)
+
+#### Active High vs Active Low Resistor
+- With Active Hight => uses Pulldown Resistor
+    - When the switch/pushbutton is activated (closed/pressed), it sends a high signal (value) to the microcontroller.  
+        -- *When it's active, it sends a high signal*
+        -- *Active Button/Switch (Active State) = High Signal*
+        -- *Deactivated Button/Switch = Low Signal*
+    - When the switch/pushbutton is not pressed (open), it sends a low signal (value) to the microcontroller
+      --*PullDown resistor is used to pull down the value of the microcontroller pin to low when the switch is not pressed*
+ ![Pulldown Resistor Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/pulldown_resistor_circuit.jpg)
+      
+- With Active Low => uses Pullup Resistor: 
+    - When the switch/pushbutton is activated, it sends a low signal (value) to the microcontroller
+        -- *When it's active, it sends a low signal*
+        -- *Active Button/Switch (Active State) = Low Signal*
+        -- *Deactivated Button/Switch = High Signal*
+    - When the switch/pushbutton is not pressed, it sends a high signal (value) to the microcontroller
+      --*Pullup resistor is used pull up the value of the microcontroller pin to high when the switch is not pressed*
+ ![Pulldown/Pullup Resistor Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/pulldown_pullup_resistor.jpg)
+
+### Pushbutton Circuit:
+Practising what we have learned to create a Pushbutton Circuit:
+
+#### Hardware Connection:
+- Connecting the first side (terminal) of the pushbutton to the VCC (5V) on Arduino, we can do it through the common power (positive) rail on the breadboard
+![Pushbutton to Vcc connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-to-vcc-connection.jpg)
+
+- Connecting the other side (terminal) of the pushbutton to 10K resistor. Notice in the image below we left one terminal to be used later
+![Pushbutton to Resistor connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-to-resistor-connection.jpg)
+
+- Connecting the other end of the resistor to Ground
+![Resistor to breadboard gnd connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/resistor-to-gnd-connection.jpg)
+
+- Connection the ground (Negative rail on breadboard) to Arduino board
+![Breadboard Ground to Arduino GND](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard-ground-to-gnd.jpg)
+
+- Connecting the terminal point between the pushbutton and the resistor to Pin 10 (You can use pin 12 also)  
+![Breadboard to Pin 10 Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard-pin10-connection.jpg)
+
+Now the full/completed circuit should look like this:
+![Pushbutton Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-circuit.jpg)
+
+After building the Hardware components of the Pushbutton circuit, we wil program it. 
+
+#### Code Files:
+In this section, we will use one of the code examples (code snippets) that are provided by Arduino library. 
+To use Arduino library (With Arduino IDE): File Menu => Examples => 01.Basics => DigitalReadSerial
+
+You can also go to arduino.cc website => Tutorials => then:
+    - In the main search box, type "digital read serial"
+    - In the products search box, select "Uno R3"
+    - Click the box in the result "Digital Serial Read"
+![Arduino Tutorial Search Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/Arduino-tutorial-search.jpg)
+
+- 08.pushbutton-circuit.ino
+you can open the "Serial Monitor" window to see the output just 0's as the pushbutton is Off (not pressed):
+![Pushbutton Code serial Monitor Output](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-code-serial-output.jpg)
+
+Now to change the value to 1, you have press and hold down the pushbutton, or with Tinkercad simulation, click and hold down the pushbutton to see the series of 1's. Notice if you press and reveal or just click (without holding) is will print only 1. 
+
+Here is the link for ["Digital Read Serial"](https://docs.arduino.cc/tutorials/uno-rev3/DigitalReadSerial)
+
+Change the code so it will output the value when it's being pressed:
+- 09.pushbutton-circuit-if.ino
+
+
+
 
 ## NOTES to Recap:
 ### GitHub Repo and Your Local Folder
@@ -341,6 +454,12 @@ For more refreshing about using Markdown language,
 you can check the official documents of GitHub:
 [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
-
 ### Arduino Learning Resources and References:
 - [Arduino Tutorial by Paul McWhorter](https://youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP)
+
+### Images References:
+- My Circuit Designs using Tinkercad
+- My Designs and drawing using Images and MS PowerPoint drawing tools
+- [Free SVG](https://freesvg.org/)
+- [Wikipedia](https://en.wikipedia.org/)
+- [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)
