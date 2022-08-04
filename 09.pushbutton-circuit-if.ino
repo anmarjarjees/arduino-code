@@ -8,6 +8,7 @@
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/DigitalReadSerial
 */
 
+// Part2: Adding if condition code
 // NOTE: I removed my comments from this file as it's just the second part:
 int pushButton = 10;
 
@@ -29,8 +30,14 @@ void loop()
   Adding if statement:
 
   If (the pushbutton is pressed) Then: Output the value
-
   Which means we will not see 0's anymore :-)
+
+  NOTE:
+  In our case we are using "Momentary Pushbutton/Switch" which only remain in their "ON" (active) state
+  or HIGH in our code below  as long as they're being actuated (pressed, held, pushed).
+  Other type is "Maintained Pushbutton/Switch" which has On/Off function
+
+  we need else statement:
   */
   if (buttonState == HIGH)
   {

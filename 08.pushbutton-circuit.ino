@@ -8,6 +8,8 @@
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/DigitalReadSerial
 */
 
+// Part1: Basic Pushbutton code
+
 // In our hardware (wiring connection) we used pin 10 (not pin 2 as the Arduino Example)
 // We need to change the value of the following varaible "pushButton" based on our connection
 // digital pin 10 has a pushbutton attached to it. Give it a name:
