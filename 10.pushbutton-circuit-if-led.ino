@@ -8,7 +8,7 @@
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/DigitalReadSerial
 */
 
-// Part3: Adding LED Code
+// Part3: Adding LED Code: Yes, all the new code changes have comment that starts with "Adding" :-)
 // NOTE: I removed my comments from this file as it's just the third part:
 
 int pushButton = 10;
@@ -24,7 +24,7 @@ void setup()
   // make the pushbutton's pin an input:
   pinMode(pushButton, INPUT);
 
-  // Setting the LED pin as an output:
+  // Adding another pinMode() function for setting the LED pin as an output:
   pinMode(LED, OUTPUT);
 }
 
@@ -38,11 +38,13 @@ void loop()
     Serial.print("Pushbutton is pressed, its value is: ");
     Serial.println(buttonState);
 
-    // We need the LED to turn on only when Pushbutton is pressed
+    // Adding digitalWrite():
+    // Since we need the LED to turn on only when Pushbutton is pressed
     // So we can add the digitalWrite() below inside this if condition:
     digitalWrite(LED, HIGH);
   }
   /*
+  Adding else statement:
   NOTE:
   Once the LED turns on in our circuit, it will stay "ON",
   so we need to make it "OFF" again, but we only want to make "OFF" when we release the push button.

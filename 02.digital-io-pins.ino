@@ -35,6 +35,13 @@ void setup()
 {
     // Put your setup code here, to run once:
     pinMode(2, INPUT); // Using pin#2 as an input voltage or using "OUTPUT"
+
+    /*
+    HINT:
+    Arduino (Atmega) pins default to inputs,
+    so they don't need to be explicitly declared as inputs with pinMode()
+    when you're using them as inputs
+    */
 }
 
 void loop()

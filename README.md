@@ -466,6 +466,79 @@ Adding an LED by following the same steps as we did before:
 Modifying the same code file but adding the required varaible and function to run the LED (refer to my comments in the code file):
 - **10.pushbutton-circuit-if-led.ino**
 
+NOTE: Remember to see the light "On", press and hold
+
+### Digital Pins:
+The pins on the Arduino can be configured as either inputs or outputs. 
+We have learnt and practiced the two states of a digital pin on Arduino board:
+- INPUT (By Default) => Normal input mode to receive a voltage when the pin is setup as an "INPUT"
+    - pinMode(pin, INPUT);  // set pin to input
+- OUTPUT => Normal output mode to send a voltage when the pin is setup as an "OUTPUT"
+    - pinMode(pin, OUTPUT);  // set pin to output
+
+You can read and learn more [Digital Pins](https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins)
+
+#### Pullup Resistors with pins configured as INPUT
+Often it is useful to steer an input pin to a known state if no input is present. This can be done by adding a pullup resistor (to +5V), or a pulldown resistor (resistor to ground) on the input. A 10K resistor is a good value for a pullup or pulldown resistor.
+
+So beside the "INPUT and "OUPUT", we have the third state "INPUT_PULLUP:
+- INPUT_PULLUP => Input mode that utilizes the Arduino internal "pullup resister"
+
+### LED with INPUT_PULLUP
+As we learnt, Digital pins 0-13 of the Arduino Uno serve as digital input/output pins. Pin 13 of the Arduino Uno is a special pin as it is always connected to:
+- a built-in LED
+- a resister
+
+NOTE: 
+Digital pin 13 is harder to use as a digital input than the other digital pins because it has an LED and resistor attached to it that's soldered to the board on most boards.
+![Arduino Pin13](https://github.com/anmarjarjees/arduino-code/blob/master/images/pin13.jpg)
+
+#### Properties of Pins Configured as INPUT_PULLUP with Pullup Resistor
+There are 20K pullup resistors built into the Atmega chip that can be accessed from software. These built-in pullup resistors are accessed by setting the pinMode() as INPUT_PULLUP. 
+ - Each Arduino model provides an option active this internal pullup resistor on each individual digital pin
+ - The input pullup mode value determines whether the internal pullup resistor is activated or not 
+ - When having a pullup resister means the arrangement is active low:
+    - Pulls the value up to "HIGH" when the pushbutton is not pressed
+    - Pulls the value down to "LOW" (value falls to LOW) when the pushbutton is pressed
+![Pushbutton Input Pullup](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-input-pullup.jpg)
+
+The pullup resistors provide enough current to dimly light an LED connected to a pin that has been configured as an input. If LEDs in a project seem to be working, but very dimly, this is likely what is going on.
+
+As a conclusion, we can use any one of these three values for the interface mode settings:
+- INPUT (By Default) => Normal input mode to receive a voltage
+- INPUT_PULLUP => Input mode that utilizes the Arduino internal "pullup resister"
+- OUTPUT => Normal output mode to send a voltage
+
+Check these two links from Arduino:
+- [InputPullupSerial Full Details](https://www.arduino.cc/en/Tutorial/BuiltInExamples/InputPullupSerial) from Arduino Tutorials
+- [InputPullupSerial INPUT_PULLUP Demo](https://docs.arduino.cc/built-in-examples/digital/InputPullupSerial) from Arduino built-in examples
+
+#### Hardware Connection:
+- Pushbutton is an active low:
+  - connect the pushbutton one side to pin 2 
+  - connect the pushbutton one side to the ground (GND) on Arduino
+- For the LED to be connected to pin 13 => no wiring as we will use the built-in LED that is already connected to Pin 13
+
+![Pushbutton Input Pullup Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-input-pullup-circuit.jpg)
+
+#### Code Files:
+When using Arduino IDE:
+ - Go to "file" => "Examples" => "02.Digital" => "DigitalInputPullup"
+ - OR check the two links above to get the code
+- **11.pushbutton-input-pullup.ino**
+
+If you run your code or start the simulation you will see two different results:
+- When you push the pushbutton:
+    - The Built-in LED is "On"
+    - The output on the Serial Monitor is 0's 
+![Pushbutton Input Pullup Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/active-push-zero-values.jpg)
+
+- When you release the pushbutton:
+    - The Built-in LED is "Off"
+    - The output on the Serial Monitor is 1's 
+![Pushbutton Input Pullup Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/inactive-push-one-values.jpg)
+
+
 ## NOTES to Recap:
 ### GitHub Repo and Your Local Folder
 - To connect your local folder with your remote repo, my example:
