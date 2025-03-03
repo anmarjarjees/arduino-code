@@ -1,36 +1,40 @@
-int LED = 8;
+int LED = 8; // Variable named "LED" with the value of "8" (Digital Pin#8), and the data type is integer
+
 /*
-The same code as the previous example/code file but with simple
-change to make the LED blinks faster
+This code is similar to the previous example but with modifications to make the LED blink faster.
 */
 
-int counter = 0;
+int counter = 0; // Initializing the counter variable to start from 0
+
 void setup()
 {
-    pinMode(LED, OUTPUT);
-    Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
+    pinMode(LED, OUTPUT); // Setting LED pin as an OUTPUT
+    Serial.begin(9600); // Opens serial port and sets data rate to 9600 bps
 }
 
 void loop()
 {
-    // Put your main code here, to run repeatedly:
+    // Incrementing the loop counter by 100 in each iteration
+    counter = counter + 100; // Change#1: Incrementing the loop value by 100
 
-    counter = counter + 100; // Change1: Incrementing the loop value by 100
-
+    // Printing the current blink number to the Serial Monitor
     Serial.print("Blink Number # ");
     Serial.println(counter);
 
+    // Turning the LED on
     digitalWrite(LED, HIGH);
-
+    
     /*
-    Change2: Reduce the value of delay from 1000 MS which is 1 Second
-    with light is on to be 1000-counter
+    Change#2: Reduce the delay time from 1000ms (1 second) to (1000 - counter)ms
+    This will make the LED blink faster as the counter increases.
     */
     delay(1000 - counter);
+    
+    // Turning the LED off
     digitalWrite(LED, LOW);
-
+    
     /*
-    Change3: Repeat the same code: 1000 - counter
+    Change#3: Apply the same reduced delay value for the LED OFF state.
     */
     delay(1000 - counter);
 }
@@ -38,7 +42,10 @@ void loop()
 /*
 NOTE:
 To run this program:
-- You can verify the code first by clicking on the verify icon on the top left corner.
-- Then upload it to Arduino board by clicking on the upload arrow icon on the top left corner
-- Open the Serial Monitor Window using any way as explained in the README file
+- Verify the code first by clicking on the verify icon (✓) in the Arduino IDE.
+- Upload the code to the Arduino board by clicking on the upload arrow icon (→).
+- Open the Serial Monitor Window to view the output:
+  - Click on "Tools" > "Serial Monitor"
+  - OR use the shortcut (Ctrl + Shift + M)
+  - Ensure the baud rate in the Serial Monitor is set to 9600.
 */

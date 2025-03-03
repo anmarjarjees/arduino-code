@@ -2,47 +2,137 @@
 ## Brief and Simple Demonstration About How to Start with Arduino Programming
 ##### Anmar Jarjees
 
+# About Arduino?
 ![Arduino UNO R3](https://github.com/anmarjarjees/arduino-code/blob/master/images/Arduino_Uno_R3.jpg)
 
-Arduino is an open-source electronic computing platform. It has two components:
-- Hardware: Arduino Circuit Board => Arduino Uno R3 (It has a computing system/processor)
-- Software: Arduino IDE to write our code for controlling the Arduino board. Using Arduino language which is based on C/C++ language
+Arduino is an open-source electronics platform designed for beginners and professionals alike. It consists of two main components:
+1. Hardware – The Arduino board (like the Arduino Uno R3) with a small processor that runs code.
+2. Software – The Arduino IDE, a program where you write and upload code to the board. The coding language is based on C++.
 
-It's Easy-to-use hardware and software and it's intended for anyone who is interested in creating interactive objects or environments. 
+## Why Use Arduino?
+Arduino is easy to use and great for learning how to code and build electronic projects. It features easy-to-use hardware and software, making it perfect for anyone interested in creating interactive objects or environments.
+
+- [More About Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3/)
+
+- [Buy Arduino Uno R3](https://store-usa.arduino.cc/products/arduino-uno-rev3)
+
+## How to Connect It?
+The Arduino Uno R3 connects to your computer with a USB cable, allowing you to upload code and power the board.
 
 [Arduino Board - UNO R3](https://docs.arduino.cc/hardware/uno-rev3)
 
 [Arduino Uno Rev3](https://store-usa.arduino.cc/collections/boards/products/arduino-uno-rev3)
 
-Arduino Board is connected to the computer through a USB cable.
+# MCU (Microcontroller Unit)
+A microcontroller is a small computer built into a single VLSI (Very Large Scale Integration) integrated circuit (IC) chip. It contains:
+- One or more CPUs (processor cores)
+- Memory (to store and run programs)
+- Programmable input/output peripherals (to connect with sensors, motors, and other components)
 
-### MCU (MCU for microcontroller unit)
-A microcontroller is a small computer on a single VLSI (Very Large Scale Integration) integrated circuit (IC) chip. A microcontroller contains one or more CPUs (processor cores) along with memory and programmable input/output peripherals. You can check this article about [Microcontroller](https://en.wikipedia.org/wiki/Microcontroller)
+Learn more about [Microcontroller](https://en.wikipedia.org/wiki/Microcontroller)
 
+# Breadboards:
+A breadboard is anything you use to prototype electronics. When working on electronic circuits, the breadboard is a white, plastic, and solderless panel (also known as a protoboard). It helps run and test circuits without the need for soldering.
 
-### Breadboards:
-Breadboard is anything you use to prototype electronics. When working on electronic circuits, breadboard will be the white, plastic, and solderless panel (board) also know as a "Protoboard". It helps to run and test any electronic circuit without the need of soldering.
-
+## How Does a Breadboard Work?
 ![Breadboard](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard.jpg)
-- Every breadboard has rows labeled 1-N and 2 sets of columns labeled a-e and f-j. The first set of columns: a, b, c, d, and e are connected together and the second set of columns: f, g, h, i, and j are connected together. the two sets are separated by a middle grove.
-- All of the terminals on the same row are connected. Columns are not connected. The image below shows the green lines for row connections and the orange for columns connections (notice that I only highlighted just 4 as a sample), for example using the point (terminal) a1, b1, c1, d1, or e1 is the same.
+- Every breadboard has rows labeled 1-N and two sets of columns labeled a-e and f-j.
+- Connected parts:
+    - Columns a-e are internally connected.
+    - Columns f-j are also connected.
+    - The two sets are separated by a middle groove.
+- All terminals in the same row are connected, but columns are not connected. The image below shows:
+    - Green lines for row connections.
+    - Orange lines for column connections.
+    - Example: a1, b1, c1, d1, and e1 are the same connection..
 
 ![Breadboard Rows/Columns Connections](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard-r-c-connections.jpg)
-- The positive (red) and the negative/ground (blue or black) rails on the two sides are commonly used to connect components to power, ground, or both. We can use any terminal to do the job along the negative or the positive rail 
 
-You can check this article ["How to use a breadboard"](https://www.losant.com/blog/how-to-use-a-breadboard#:~:text=Along%20each%20side%20of%20a,be%20connected%20to%20the%20rails.) to learn the basic of breadboards. Or this article ["How to Use a Breadboard (with Video Example)"](https://www.instructables.com/How-to-use-a-Breadboard-with-example/)
+- The red (+) and blue/black (-) rails on both sides are used for power and ground connections.
+- You can use any terminal along the rails for power and ground.
 
-## NOTE: 
-You can use VScode to write Arduino sketches (programs):
-* Step1: Download the official Arduino IDE from www.arduino.cc <br>
-[Download Arduino](https://www.arduino.cc/en/software) <br>
-NOTE: You need to download Arduino IDE even if you are not going to use it.
+Learn more: [How to use a breadboard](https://www.losant.com/blog/how-to-use-a-breadboard)
 
-* Step2: Install the "Arduino" Extension which is provided by Microsoft
+Watch: [How to Use a Breadboard (Video)](https://www.instructables.com/How-to-use-a-Breadboard-with-example/)
 
-1. Arduino IDE => Uses a graphical text editor
+# NOTE: Using VS Code for Arduino Sketches
+You can use VS Code to write Arduino programs (called sketches).
 
-2. it comes with a default starting code:
+- Step 1: Install the Arduino IDE
+    - Download the official Arduino IDE from www.arduino.cc. [Download Arduino](https://www.arduino.cc/en/software)
+    - NOTE: You must install the Arduino IDE even if you don't plan to use it, as it includes important tools and libraries.
+
+- Step 2: Install the "Arduino" Extension in VS Code
+    - Open VS Code
+    - Go to Extensions (Ctrl+Shift+X)
+    - Search for "Arduino" (by Microsoft) and install it
+
+
+1. Arduino IDE – The Graphical Text Editor
+    - The Arduino IDE provides a simple text editor to write and upload your code.
+    - It comes with a default starting code:
+
+```cpp
+void setup() {
+  // This runs once when the board starts
+}
+
+void loop() {
+  // This runs repeatedly in a loop
+}
+```
+
+2. Basic Arduino Terminologies
+- Sketches => Programs written in Arduino IDE that run on the board
+- Pin => A physical input or output on the board (e.g., output to an LED, input from a button)
+Learn more about  ["Digital Pins"](https://docs.arduino.cc/learn/microcontrollers/digital-pins) from Arduino docs.
+- Digital => A signal that is either ON (HIGH = 1) or OFF (LOW = 0)
+- Analog Signal => A voltage value that ranges from 0 to 255 PWM.
+    - PWM (Pulse Width Modulation) is a technique for getting analog results using digital signals.
+    - Example uses:
+        - Controlling LED brightness
+        - Adjusting DC motor speed
+        - Simulating analog voltage levels using a digital signal
+    - 0 represents 0V, and 255 represents 5V.
+ 
+3. Using the Arduino Uno Board
+    - When connected to a computer, it appears as COMX (where X is the port number).
+    - Select the correct port in Arduino IDE or VS Code before uploading code.
+
+4. More Examples in the Arduino IDE
+    - File Menu => Examples => 01. Basics
+    - Try "Blink" => A simple program that makes an LED turn on and off
+
+# IMPORTANT NOTE:
+You can learn Arduino without buying the actual board! Yes, you can practice and experiment virtually:
+
+## How? By using Tinkercad:
+1. Go to the Tinkercad website: www.tinkercad.com
+2. Create an account (for free) if you don't have one yet, then sign in.
+3. You will land on your personal Dashboard, similar to "WordPress."
+4. On the left-side panel of the Dashboard, you have these four categories:
+    - 3D Designs
+    - Circuits
+    - Codeblocks
+    - Lessons
+    - Select "Circuits" => Then click the button "Create new Circuit." You can now start building your circuit.
+
+![Tinkercad Dashboard Left Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/dashboard-options.jpg)
+
+5. Since we need to work on an **Arduino Circuit**, search for "Arduino" in the search box above the Circuit area and select **"Arduino Uno R3."** You will now have the Arduino Circuit available on the sketch board.
+
+![Board Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/board-options.jpg)
+
+You can search for any other component that you need in your Arduino project. For example, if you need a breadboard, simply search for it and drag it into the workspace.
+
+![Breadboard with Arduino](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard-arduino.jpg)
+
+6. To start coding the Arduino Circuit, click the "Code" button at the top:
+- Blocks: Use built-in templates and samples.
+- Text: Write code traditionally using a text editor.
+- Blocks + Text: Mix both options.
+
+7. Select "Text", and you will get a text editor with the two basic required functions, just like in the Arduino IDE:
 ```cpp
 void setup() {
 
@@ -53,261 +143,305 @@ void loop() {
 }
 ```
 
-3. Some of the Arduino Basic Terminologies:
-  - "sketches" are programs written in Arduino IDE that can run on Arduino board
-  - "pin" is either an input or output port that is connected to something in the breadboard. For example, Output to an LED or Input from a Push Button. You can learn more about ["Digital Pins"](https://docs.arduino.cc/learn/microcontrollers/digital-pins) from Arduino docs.
-  - "digital" is the voltage value to be on/off, 1/0, or in Arduino C language is "HIGH" or "LOW"
-  - "analog" is the voltage with more realistic value that can be ranged from 0 to 255 PWM. Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. Where 0 can represent the 0 volt and 255 can represent 5 volt. PWD is a technique used in controlling the brightness of LED, speed control of DC motor,  or where you have to get analog output with digital means. 
-
-4. Using Arduino Uno Board on COMX (X will be the port number)
-
-5. You can add more examples from Arduino IDE:
-File Menu => Examples => 01. Basic (For example)
-
-## IMPORTANT NOTE:
-You can learn Arduino without buying the actual board (Yes for learning and virtual demonstration):
-1. Go to the Tinkercad website: www.tinkercad.com
-2. Create an account (for free) if you don't have one yet, then sign in
-3. You will land on your personal Dashboard like "WordPress"
-4. On the left-side panel of the Dashboard, you have these 4 categories:
-- 3D Designs
-- Circuits
-- Codeblocks
-- Lessons
-Select "Circuits" => Then click the button "Create new Circuit".
-And you can start building your Circuit
-
-![Tinkercad Dashboard Left Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/dashboard-options.jpg)
-
-5. Since we need to work on Arduino Circuit, we can search for Arduino in the search box above the Circuit, select "Arduino Uno R3". You will have the Arduino Circuit available on the sketch board
-
-![Board Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/board-options.jpg)
-
-Notice that we can search for any other component that we need to use in our Arduino projects. For example, we need "breadboard" so we can search for it and just drag it to the workspace.
-
-![Breadboard with Arduino](https://github.com/anmarjarjees/arduino-code/blob/master/images/breadboard-arduino.jpg)
-
-6. To start coding the Arduino Circuit, you click the "Code" button at the top:
-- Blocks: Going with the templates/samples to see different built-in samples of tasks
-- Text: To use the traditional method of coding with a text editor, select "text"
-- Blocks + Text: mixing the two options
-
-7. Select "Text", and you will get a text editor with the two basic required functions like in Arduino IDE
-
-8. After writing your code, you can click "Start Simulation". No need for uploading the code to a real physical Arduino board!
+8. After writing your code, click "Start Simulation." No need to upload the code to a real physical Arduino board!
 
 #### Code Files:
-- **01.intro.ino**
-- **02.digital-io-pins.ino**
-- **03.first-sketch.ino**
+- **01.intro.ino** => Basic introduction to Arduino programming
+- **02.digital-io-pins.ino** => Working with digital input and output pins
+- **03.first-sketch.ino** => Your first Arduino sketch with simple functionality
 
-## Serial Monitor:
-Is a built-in feature that comes with Arduino IDE. It's useful for code troubleshooting and facilitate the communication between the Arduino board and other devices like the computer. 
-In order to work with "Serial Monitor", we need to activate it or open its window first, and we have 3 ways:
-1. First Way: Go to "Tools" menu => Click the "Serial Monitor"
-2. Second Way: Using the HOTKEY CTRL+SHIFT+M (In Mac => COMMAND+OPTIONS+M)
-3. Third Way: Click the small magnifying glass icon on the top right corner
+# Serial Monitor:
+The Serial Monitor is a built-in feature in the Arduino IDE. It is useful for troubleshooting code and enables communication between the Arduino board and other devices, such as a computer.
 
-All Arduino boards have at least one serial port. In Arduino UNO board, it's Digital Pins 0 and 1:
-- Digital Pin 0 (RX)
-- Digital Pin 1 (TX)
+To open the Serial Monitor, you can use any of these three methods:
+1. Menu Option: Go to the "Tools" menu and click "Serial Monitor".
+2. Keyboard Shortcut:
+    - Windows/Linux: Press CTRL + SHIFT + M
+    - Mac: Press COMMAND + OPTION + M
+3. Icon Shortcut: Click the magnifying glass icon in the top-right corner of the Arduino IDE.
 
-Notice that these two ports (Pins) cannot be used for digital input/output when using the serial communication. <br>
+## Serial Communication in Arduino UNO:
+All Arduino boards have at least one serial port. On the Arduino UNO, the serial communication uses:
+
+- Digital Pin 0 (RX) – Receive data
+- Digital Pin 1 (TX) – Transmit data
+
+&#9888; Important: These pins cannot be used for regular digital input/output while serial communication is active.
+
 You can lear more about [Serial Communication Functions](https://www.arduino.cc/reference/en/language/functions/communication/serial/).
 
+## Common Serial Communication Functions:
 The two functions of Serial Communication that are demonstrated in this repo are:
-- Serial.begin(): Sets the data rate in bits per second (baud) for serial data transmission.
+- Serial.begin(baudRate): Sets the communication speed (baud rate) in bits per second.
     -- [Serial.begin() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
-- Serial.print(): Prints data to the serial port as human-readable ASCII text.
+- Serial.print(data): Prints data to the Serial Monitor as human-readable ASCII text.
     -- [Serial.print() Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
 
 #### Code Files:
 - **04.led-serial-monitor.ino**
 
 ## Light Emitting Diode (LED):
-A light-emitting diode (LED) is a semiconductor tiny light source that emits light when current flows through it. Allows Arduino/Genuino boards to simplify the use of the LED.<br>
-This library simplify the use of a LED. It contains many function to manage a LED. A diode is a semiconductor device that essentially acts as a one-way switch for current. It allows current to flow easily in one direction, but severely restricts current from flowing in the opposite direction.
+A **Light Emitting Diode (LED)** is a small semiconductor light source that emits light when an electric current flows through it. LEDs are widely used in Arduino projects due to their low power consumption and ease of use.
 
-LEDs/Diodes have polarity that is determined by an anode (positive lead) and cathode (negative lead). So they only light up when its leads (the positive/negative) are oriented properly.
+### How LEDs Work
+LEDs function like **one-way switches for current**, allowing electricity to flow in only one direction. This behavior is due to their semiconductor nature, making them similar to diodes.
+
+### LED Polarity
+Unlike standard resistors, LEDs have polarity, meaning they must be connected in the correct orientation:
+    - Anode (+, longer leg) => Connected to the positive voltage
+    - Cathode (-, shorter leg) => Connected to ground
+If connected incorrectly, the LED won't light up.
 
 ![LED/DIODE Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/diode_symbol.jpg).
 
-### LED Anode and Cathode:
-- Anode (Positive) lead is longer
-- Cathode (Negative) lead is shorter
-- OR by using the "flat" area/spot on the case, the lead which is closest to the flat spot is the cathode pin
+### LED Circuit Symbol
+Below is the circuit symbol for a diode (LEDs are a type of diode):
 
 ![LED Diagram](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-light-emitting-diode.jpg).
 
+In any board/circuit, LED requires a resistor to work.
+
+### Additional Resources
 You can check this [Light-Emitting Diodes (LEDs) article](https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/all)
 
 You can check this [article about diode](https://www.fluke.com/en-ca/learn/blog/electrical/what-is-a-diode#:~:text=A%20diode%20is%20a%20semiconductor,flowing%20in%20the%20opposite%20direction.)
 
-In any board/circuit, LED requires a resistor to work.
+# Resistor:
+A resistor is a passive two-terminal electrical component that provides electrical resistance in a circuit. It is used in electronic circuits to:
+ - Reduce current flow (resists the flow of current)
+ - Adjust signal levels
+ - Divide voltages
+ - Bias active components
+ - Terminate transmission lines
 
-### Resistor:
-A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow (resists the flow of a current), adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses. So In a full circuit, LED requires the use of a resistor to make sure that the maximum current is not exceeded.
+## Resistor in LED Circuits
+In a circuit, an LED requires a resistor to prevent excessive current that could damage it. The resistor limits the current flowing through the LED to ensure safe operation.
 
 ![Electronic-Lead-Resistors-Array](https://github.com/anmarjarjees/arduino-code/blob/master/images/Electronic-Lead-Resistors-Array.png)
 
 ![LED Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED_circuit.jpg)
 
-Higher resistor values will further lower the current, reducing the brightness of the LED
+## Resistor Value and LED Brightness
+- Higher resistor values decrease current flow, making the LED dimmer.
+- Lower resistor values increase current flow, making the LED brighter but risking damage if the current is too high.
 
-### Getting Resistor Value (Ohm's Law) in General:
-To determine what value we can use for a resistor for some special kinds of LEDs, we can use the Ohm's law, so by combining the elements of "voltage", "current", and "resistance", Ohm developed the formula below:
-> V = I x R (To calculate the Voltage => it's called "Ohm's law")
+## Getting Resistor Value (Ohm's Law) in General:
+To determine the appropriate resistor value for certain types of LEDs, we use Ohm's Law. By combining the elements of **voltage (V)**, **current (I)**, and **resistance (R)**, Georg Ohm developed the following formula:
+> V = I × R (Ohm's Law - used to calculate Voltage)
 Where:
-- V = Voltage in volts
-- I = Current in amps
-- R = Resistance in ohms
+- V = Voltage (in volts)
+- I = Current (in amps)
+- R = Resistance (in ohms)
 
-After rearranging the formula/equation:
-> I = R / V (To calculate the Current)
-> R = V / I (To calculate the Resistance which is what we need to use)
+By rearranging the formula, we can also calculate:
+> I = V / R (To calculate Current)
+> R = V / I (To calculate Resistance - which is what we need)
 
-So to determine the minimum acceptable value of the resistor, we can use this formula/equation:
-> R = V / I
+### Determining the Minimum Resistor Value
+To find the minimum acceptable resistor value for an LED circuit, we use:
+ > R = V / I
 
-We need the value of "V" and the value "I" to find "R", we will learn to find them in the next topics. <br>
+We need the values of V (voltage) and I (current) to determine R (resistance). These values will be explained in the next sections.
 
+### Additional Resources:
 You can check this video [Ohm's Law](https://www.youtube.com/watch?v=8jB6hDUqN0Y).<br>
 Or read the full article about ["Voltage, Current, Resistance, and Ohm's Law"](https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/all#:~:text=Ohm%20defines%20the%20unit%20of,%2C%20and%20pronounced%20%22ohm%22.)
 
 #### IMPORTANT NOTE:
-LED are what's known as a "non-homic" devices. It introduces something called a "voltage drop" into a circuit, and this will lead to change the amount of current running through it. knowing the "Voltage Drop" value for a LED is important as this value/number will help you decide how much voltage your circuit will need to supply to the LED. Which means it will affect the voltage value that we use in Ohm's Law equation.
+LEDs are non-ohmic devices, meaning their resistance does not remain constant. Instead, they introduce a voltage drop in a circuit, which affects the current flowing through them.
 
-##### LED Specifications:
+Knowing the voltage drop value of an LED is important because it determines how much voltage your circuit needs to supply. This directly impacts the voltage (V) value used in Ohm’s Law calculations when selecting the appropriate resistor.
+
+## LED Specifications:
 ### Voltage Drop (Forward Voltage):
-When buying a LED it comes with a document that shows all its specifications called "Datasheet". You can check this link about [LED-Basic Red] (https://www.sparkfun.com/products/9590?_ga=2.185358185.1176383297.1658699422-984879093.1658436149), click "Documents" tab then "Datasheet". In the Datasheet PDF file, you will see some tables with categories and values. The item that we need to look for is called "Forward Voltage" of an LED which the "Voltage Drop" of that specific LED. It has Min and Max value so the minimum is the value that we need to know/use to determine the value of the resistor. Notice in case if the Datasheet provides Forward Voltage for RED, Green, and Blue Color LED, we use the Red Color value based on our selected LED.
+When purchasing an LED, it comes with a Datasheet, a document that lists all its specifications. You can check this example for a [Basic Red LED](https://www.sparkfun.com/products/9590?_ga=2.185358185.1176383297.1658699422-984879093.1658436149). Click the "Documents" tab, then open the "Datasheet".
+
+In the Datasheet PDF, you will find tables listing various specifications. The value we need is called Forward Voltage, which represents the Voltage Drop of that specific LED. This value is usually given as a minimum (Min) and maximum (Max) range.
+
+- To calculate the resistor value using Ohm’s Law, we use the minimum Forward Voltage.
+- If the datasheet provides different values for Red, Green, and Blue LEDs, use the Red LED value for our example.
+
 ![LED Forward Voltage](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-voltage.jpg)
 
-> ** We will use the minimum value of 1.8 V based Datasheet table that is provided with LED package.**
+> ** For our calculations, we will use the minimum Forward Voltage of 1.8V, as specified in the LED datasheet.**
 
-### The Current:
-Also we can see in the first table of Parameters, the first important parameter is the "Forward Current". You can see a forward current for a Red LED is 20 mA (milliamp: a unit for measuring electrical current which is equal to one thousandth of an ampere.). 
+# The Current:
+In the first table of the datasheet, the key parameter we need is the Forward Current. For a Red LED, the datasheet specifies a Forward Current of 20mA (milliampere), which is 1/1000th of an ampere (A). 
 
 ![LED Forward Current](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-current.jpg)
-Please remember that although the datasheet says 20 mA, but this is the maximum current that LED can take! So usually, when we do our calculation:
- > ** we should go a little bit lower which is around 10 mA.**
+### Important Note:
+Although the datasheet states 20mA, this represents the maximum current the LED can handle.
+For safer and longer-lasting operation, we typically use a lower current—around 10mA—for our calculations.
 
-### Getting Resistor Value (Ohm's Law) in Arduino Project:
-Since we are using Arduino Uno Board pin for the Voltage source (not a 9V Battery for example), and the LED has a specific voltage drop as stated in the note above, so to find the right voltage value to be used in the equation (Ohm's law), we need to include the difference between the voltage that is coming from Arduino board and the specific voltage of the LED itself (voltage drop). <br>
-So to determine the required voltage value to be used, we use this formula:
-The voltage = Arduino Pin Voltage - LED Voltage Drop (Forward Voltage) <br>
+# Getting Resistor Value (Ohm's Law) in Arduino Project:
+Since we are using an Arduino Uno Board as the voltage source (instead of a 9V battery, for example), we need to determine the correct voltage value for Ohm's Law calculations.
 
-The formula/equation:
-> R = (Arduino Pin Voltage - LED Forward Voltage) / I
-We need to refer to the board documentation to know the Pin voltage, if you click the same link that provided at the beginning of this README file about [Arduino Uno Rev3](https://store-usa.arduino.cc/collections/boards/products/arduino-uno-rev3), then go to documentation tab (this tab will appear when you scroll down the page), then go to the topic "Input and Output", you will see this text:<br>
-"Each of the 14 digital pins on the Uno can be used as an input or output, using pinMode(),digitalWrite(), and digitalRead() functions. They operate at 5 volts. Each pin can provide or receive 20 mA as recommended operating condition and has an internal pull-up resistor (disconnected by default) of 20-50k ohm." <br>
-** So 5V is the value for "Arduino Pin Voltage" **
+### Key Concept:
+The LED has a specific voltage drop (Forward Voltage). To find the correct voltage to use in the formula, we subtract the LED's Forward Voltage from the Arduino pin voltage:
+
+**Formula for Voltage Used in Ohm’s Law:**
+
+    > Voltage = Arduino Pin Voltage - LED Forward Voltage
+
+**Final Formula for Resistance (Ohm's Law):**
+
+    > R = (Arduino Pin Voltage - LED Forward Voltage) / I
+
+## Finding the Arduino Pin Voltage:
+We need to refer to the Arduino Uno documentation to find out the pin voltage.
+
+**Source:**
+- Check the official [Arduino Uno Rev3 documentation](https://store-usa.arduino.cc/collections/boards/products/arduino-uno-rev3):
+    - Scroll down to the "Documentation" tab
+    - Under "Input and Output", you’ll find this text:
+        > *"Each of the 14 digital pins on the Uno can be used as an input or output using pinMode(), digitalWrite(), and digitalRead() functions. They operate at 5 volts. Each pin can provide or receive 20 mA as recommended operating conditions and has an internal pull-up resistor (disconnected by default) of 20-50kohm."*
+
+### Conclusion:
+- Arduino Pin Voltage = 5V
+- This is the value we will use in our Ohm’s Law calculations.
 
 #### Our Formula with the values:
-Based on what we have searched above:
+Based on the values (what we have searched above) we found:
 - LED Current: 10mA
 - LED Forward Voltage (Voltage Drop): 1.8V
 - Arduino Pin 2 Output Voltage: 5V (Max)
 
-> R = (Arduino Pin Voltage - LED Forward Voltage) / I
-> R = (5V - 1.8V)/10mA = 320 ohm
+Using Ohm's Law:
 
-NOTE:
-The standard resistor value is 330 ohm to be commonly used in breadboards and other prototyping applications, these 330 ohm resistors make excellent LED current limiters and are great for general use. 330 ohm is very close to what we got from the above equation. So we can apply the same standard steps to calculate the desired resistor for any LED with any color or datasheet.
+R = (Arduino Pin Voltage - LED Forward Voltage) / I
+R = (5V - 1.8V) / 10mA
+R = 3.2V / 0.01A
+R = 320 ohm
 
-### LED Circuit and Coding:
-Starting with the Hardware first by building the LED circuit
-#### LED Wiring
-Connecting an LED to arduino board:
-- Pin 8 (on Arduino Board) as a voltage source will be connected to the one side of a resistor. 
-- The resistor is 330 ohm. One end has to be placed on the same line as the Pin2 wire which is Line 2 in the breadboard. <br>
-NOTE: You can specify the value of the resistor exactly plus the measurement unit with the help of the inspector popup window that appears when you select an item in the Tinkercad workspace:
+### Choosing the Standard Resistor Value
+**Note:** The closest standard resistor value is 330ohm, which is commonly used in breadboards and prototyping applications.
+
+Why 330ohm?
+- It is very close to our calculated 320ohm.
+- It provides safe current limiting for the LED.
+- It is a widely available value for general use.
+**Conclusion:**
+The same calculation method can be used for any LED by substituting the values from its datasheet.
+
+# Refined LED Circuit and Wiring Instructions
+## Building the LED Circuit
+Before coding, we need to build the hardware setup.
+## LED Wiring: Connecting an LED to the Arduino Board
+1. Connect Pin 8 (on the Arduino board) to one side of a resistor.
+    - Pin 8 will serve as the voltage source.
+    - Use a 330ohm resistor to limit the current and protect the LED.
+2. Place the resistor on the breadboard.
+    - One end of the resistor should be on the same line as the wire from Pin 8 (Line 2 on the breadboard).
+
+**Tip:** In Tinkercad, you can check and adjust the resistor value and unit using the inspector popup window when selecting the resistor in the workspace.
 
 ![Resistor Inspector Options](https://github.com/anmarjarjees/arduino-code/blob/master/images/resistor-inspector-options.jpg)
 
-- The other side of the resistor connects to the LED anode (+) which is the longer side of the LED. Also they both have to be placed in the same line which is Line 2 also. Notice that Tinkercad will give you hints when you hover the mouse like anode/cathode and etc.
+3. Connect the LED
+    - The other side of the resistor connects to the LED anode (+), which is the longer side of the LED.
+    - Both the resistor and LED anode must be placed on the same line (Line 2).
+    - The LED cathode (-) connects to the Arduino ground pin (GND).
+
+**Helpful Tinkercad Tip:** Hover your mouse over the LED in Tinkercad, and it will show hints like Anode and Cathode.
 
 ![LED Cathode](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-Cathode.jpg)
 ![LED Anode](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-Anode.jpg)
-- The LED cathode (-) connects to the Arduino ground pin (GND)
-Please look at the image below for more clarifications:
+
+4. Final Wiring Setup:
+Here is a visual reference of the complete LED circuit wiring:
+(Please look at the image below for more clarifications)
 
 ![LED Wiring](https://github.com/anmarjarjees/arduino-code/blob/master/images/LED-wiring.jpg)
 
+### Summary:
+Pin 8 => Resistor (330Ω) => LED Anode (+) => LED Cathode (-) => GND
+This ensures safe current flow and proper LED operation.
+
 #### Code Files:
-Now you can start our code to light the LED circuit:<b>
-Opening the same code file "04.led-serial-monitor.ino" and add some changes based on the pin that we used in the Hardware connection:
+Now, let's start coding to light up the LED circuit.
+Open the same code file "04.led-serial-monitor.ino" and modify it based on the pin we used in the hardware connection. Save it as:
 - **05.led-circuit-work1.ino**
 
-As it was explained above, you can click "Code" button, then select "Text" from the dropdown list and start writing your code.
+**Writing the Code:**
+As it was explained above,
+1. Click the "Code" button in Tinkercad.
+2. Select "Text" from the dropdown menu.
+3. Start writing your code.
 
 ![Coding Sample](https://github.com/anmarjarjees/arduino-code/blob/master/images/coding-sample.jpg)
 
-Then you can run your code by clicking "Start Simulation" button.<br>
-The LED will be on for a second then off for half a second and so on...<br>
-NOTES: 
-- "Simulation" button is a toggle button between to actions: Start/Stop
-- When you are in simulation mode, you cannot make any changes in our your code in your circuit. You have to click "Stop Simulation" button
-- To see the output of Arduino built-in functions,
-You can use the "Serial Monitor" it's like VSC terminal:
+**Running the Code:**
+- Click "Start Simulation" to run the code.
+- The LED will turn on for one second, then off for half a second, repeating continuously.
+
+**NOTES:**
+- The "Simulation" button toggles between Start and Stop actions.
+- You cannot edit your code while the simulation is running. Click "Stop Simulation" first.
+- To view output from Arduino built-in functions, use the Serial Monitor, similar to the VS Code terminal:
 
 ![Serial Monitor](https://github.com/anmarjarjees/arduino-code/blob/master/images/serial-monitor.jpg)
 
 #### Code Files:
-Now we can few changes to our code, please refer to the file:
+Now, we will make a few changes to our code. Please refer to the file:
 - **06.led-circuit-work2.ino**
 
-### LED Traffic Signal Circuit:
-Practising what we have learned to create LED Traffic Signal Circuit:
-#### Hardware Connection:
+## LED Traffic Signal Circuit:
+Let's apply what we've learned to create an LED Traffic Signal Circuit.
+### Hardware Connection:
 For this project, we need to control three separate digital interfaces:
 - Red LED => using pin 12
 - Yellow LED => using pin 11
 - Green LED => using pin 10
 
+**Required Components:**
 - Breadboard
 - 3 Resistors to be plugged into the breadboard:
 ![Three Resistor on Breadboard](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-Resistor-board.jpg)
-- Connect the 3 LED (as we did with one LED) if you have all the physical components. When using "Autodesk Tinkercad", you can select and LED and change its color from the inspector popup window:
+
+#### Connecting the LEDs:
+- Connect 3 LEDs as we did with one LED. If you have all the physical components, follow the same steps. When using Autodesk Tinkercad, you can select an LED and change its color from the Inspector popup window:
 
 ![Three Color LEDs](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-color-led.jpg)
 
-- Connect one end of each resistor to its corresponding LED, and the other end will be connected to arduino pins as stated above. Notice in the image below, I used different color for the wires for more clarity:
+- Connect one end of each resistor to its corresponding LED, and the other end to the Arduino pins specified above. Notice in the image below, I used different colors for the wires for more clarity:
 
 ![Three Led Wire Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/three-led-wire-connection.jpg)
 
+#### Connecting the LEDs to Ground:
 - Connecting the other leg of each LED to the ground as we did in the first simple circuit for one LED. Since we have three LED, we can use the breadboard common ground (Usually the the strips marked"-"). Connect the cathode leg for each LED to the negative line of the breadboard  as shown below:
 
 ![LED Cathode Negative Line Connections](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-cathode-negative-line.jpg)
 
-- Finally, connecting the negative line on the breadboard that has the three connections from the LED to the Ground Pin (GND) of Arduino board.
+- Finally, connect the negative line on the breadboard (where all three LEDs are connected) to the GND pin on the Arduino board.
 
 ![LED Traffic Signal Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-traffic-signal-connection.jpg)
 
 #### Code Files:
-You can use the code editor with "Text" option to write your code. In the code editor window, click the "Serial Monitor" to see the printed text output also.
+You can use the code editor with the "Text" option to write your code. In the code editor window, click the "Serial Monitor" to see the printed text output as well.
 
 - **07.led-traffic-signal.ino**
 
 ![Led traffic code - Serial Monitor](https://github.com/anmarjarjees/arduino-code/blob/master/images/led-traffic-code-serial-output.jpg)
 
-## Working with Push Buttons:
-Push buttons has different shapes to provide arduino with an input signal. Push buttons can be explained as simple power controlling switches of a machine or appliance. A switch is a component which controls the open-ness or closed-ness of an electric circuit. It connects two points in a circle when you press it:
+# Working with Push Buttons:
+Push buttons have different shapes to provide Arduino with an input signal. Push buttons can be explained as simple power-controlling switches of a machine or appliance. A switch is a component that controls the open-ness or closed-ness of an electric circuit. It connects two points in a circuit when you press it:
 
 ![Pushbutton](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-symbol.jpg)
-The current can only flow through a circuit when the button is pressed for connecting the circuit.
+The **current** can only flow through a circuit when the button is pressed, completing the circuit connection.
 
 ![Simple Pushbutton Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/simple-pushbutton-circuit.jpg)
 
-### Types of Pushbutton:
+## Types of Pushbutton:
 Pushbutton can be either one of these two distinct types or categories:
-- Momentary Pushbutton/Switch: Are switches/push-buttons which only remain in their "ON" (active) state as long as they're being actuated (pressed, held, pushed, magnetized,  etc.). If they're not being actuated, they remain in their "off" state. Think about this type of switches like the keys of your keyboard, when pressing the letter "A" and hold down the key, it will keep printing/typing the letter "A" until release the button.
+- **Momentary Pushbutton/Switch:** These switches only remain in their "ON" (active) state as long as they are being actuated (pressed, held, pushed, magnetized, etc.). When released, they return to their "OFF" state. Think of this type of switch like the keys on your keyboard—when you press and hold the letter "A," it keeps typing "A" until you release the button.
 
 ![Momentary Pushbutton Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/momentary-pushbutton-symbol.jpg)
-- Maintained Pushbutton/Switch: Are switched/push-buttons that stay in one state until actuated into a new one, and then remain in that state until acted upon once again. Like the light switches on a wall. Maintained switches are great for set-it-and-leave it applications like turning power on and off.
+
+- **Maintained Pushbutton/Switch:** These switches stay in one state until actuated into a new one and then remain in that state until acted upon again. They work like light switches on a wall. Maintained switches are great for set-it-and-leave-it applications like turning power on and off.
 
 ![Maintained Switch Symbol](https://github.com/anmarjarjees/arduino-code/blob/master/images/maintained-switch-symbol.jpg)
 
-Push buttons can be also arranged into two different cases/types:
+**Push buttons can be also arranged into two different types:**
 - Normally Open (NO) => The switch is normally open, so we have an open circuit. Has to be pressed/activated/actuated to make the connection between the terminals. If you push/press it, there will be a close circuit so the current will run through it.
 
 ![Normally Open Switch](https://github.com/anmarjarjees/arduino-code/blob/master/images/normally-open-switch.jpg)
@@ -316,7 +450,7 @@ Push buttons can be also arranged into two different cases/types:
 
 ![Normally Closed Switch](https://github.com/anmarjarjees/arduino-code/blob/master/images/normally-closed-switch.jpg)
 
-This type of (NC) buttons are usually used in Emergency Stop button or the safety Stop buttons as we have on treadmill 
+This NC type is often used in Emergency Stop buttons or safety stop buttons found on treadmills. 
 
 You can [read more about push buttons](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all)
 
@@ -328,20 +462,22 @@ OR:
 ![Pushbutton Terminal Connection](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-terminal-connection.jpg)
 
 ### VCC and GND
-VCC Abbreviation of "Voltage Common Collector" is an electronics designation that refers to voltage from a power supply  (input) of a device (To supply voltage for an integrated circuit). GND Abbreviation of "Ground" is the the reference point against which the VCC is compared. It can be positive or negative compared to GND. When the VCC is at zero colts, it is called the ground.<br>
-- Vcc => refers to the "Power Supply" voltage
-- Vee => refers to the "Emitter" voltage
-- Vss => refers to the "Source" voltage
-- Vdd => refers to the "Drain" voltage
+- **VCC (short for Voltage Common Collector)** is an electronics designation that refers to the power supply voltage (input) of a device, typically used to power an integrated circuit (IC).
+- **GND (short for Ground)** is the reference point against which VCC is measured. It serves as the common return path for electric current and can be either positive or negative compared to VCC. When VCC is at zero volts, it is considered to be at ground potential.
+Here are other common voltage designations in electronics:
+- Vcc => Power Supply" voltage 
+- Vee => "Emitter" voltage 
+- Vss => Source" voltage 
+- Vdd => Drain" voltage 
 
 ### Implementing/Adding a switch/pushbutton on Arduino
-To plug/use a switch/pushbutton in an Arduino circuit, we use two methods:
-- Pullup Resistor Circuit [used with Active Low]
-- Pulldown Resistor Circuit [used with Active High]
+To connect a switch or pushbutton in an Arduino circuit, we can use two methods:
+- Pullup Resistor Circuit [used with Active Low] => Used with Active Low switches
+- Pulldown Resistor Circuit [used with Active High] => Used with Active High switches
 
-When push buttons are used in a circuit, we refer to them as:
-- Active High switch/pushbutton
-- Active Low switch/pushbutton
+**Understanding Active High & Active Low Pushbuttons:**
+- Active High => The circuit is off when the button is not pressed and on when pressed.
+- Active Low => The circuit is on when the button is not pressed and off when pressed.
 
 #### Pullup Circuit OR Active Low Circuit
 The arrangement for an active low pushbutton: 
@@ -463,7 +599,7 @@ Adding an LED by following the same steps as we did before:
 ![Pushbutton LED Full Circuit](https://github.com/anmarjarjees/arduino-code/blob/master/images/pushbutton-led-full-circuit.jpg)
 
 #### Code Files:
-Modifying the same code file but adding the required varaible and function to run the LED (refer to my comments in the code file):
+Modifying the same code file but adding the required variable and function to run the LED (refer to my comments in the code file):
 - **10.pushbutton-circuit-if-led.ino**
 
 NOTE: Remember to see the light "On", press and hold

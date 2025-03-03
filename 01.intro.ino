@@ -1,29 +1,37 @@
 /*
-The default starting code for an arduino code file
-Two required functions:
-- void setup()
-=> it runs only once when power on or reset
-=> is called when a sketch starts
-=> is used to initialize varaibles, pin modes, calling libraries
+    The default starting template for an Arduino sketch.
+    Every Arduino program requires **two essential functions**:
 
-- void loop()
-=> it runs after the setup() function
-=> it loops consecutively
-=> is used to actively control the Arduino board
+    1. void setup()
+       - Runs **only once** when the board is powered on or reset.
+       - Used to initialize:
+         - Variables
+         - Pin modes (INPUT/OUTPUT)
+         - Communication protocols (Serial, I2C, SPI, etc.)
+       - Executes **before** the loop() function.
 
-NOTE:
-These two functions are required even if we are not planning to use them
+    2. void loop()
+       - Runs **continuously in a loop** after setup().
+       - Used for:
+         - Reading sensor data
+         - Controlling outputs (LEDs, motors, etc.)
+         - Processing logic
+       - The program remains in this loop as long as the Arduino is powered.
+
+    NOTE:
+    - Even if the sketch does not require setup or loop functionality, 
+      both functions **must be present** in every Arduino program.
 */
 
-// This function is called only one time when the application starts
-// Used for initializing input and output pins to make them ready for using
+// This function executes only once at the beginning of the program.
+// Used for initializing input and output pins, setting up libraries, etc.
 void setup()
 {
     // Put your setup code here, to run once:
 }
 
-// This function runs repeatedly until the arduino is powered off
-// It's used for the main code of our program
+// This function runs repeatedly after setup() is executed.
+// It contains the main logic of the program.
 void loop()
 {
     // Put your main code here, to run repeatedly:
