@@ -250,7 +250,7 @@ Or read the full article about ["Voltage, Current, Resistance, and Ohm's Law"](h
 #### IMPORTANT NOTE:
 LEDs are non-ohmic devices, meaning their resistance does not remain constant. Instead, they introduce a voltage drop in a circuit, which affects the current flowing through them.
 
-Knowing the voltage drop value of an LED is important because it determines how much voltage your circuit needs to supply. This directly impacts the voltage (V) value used in Ohm’s Law calculations when selecting the appropriate resistor.
+Knowing the voltage drop value of an LED is important because it determines how much voltage your circuit needs to supply. This directly impacts the voltage (V) value used in Ohm's Law calculations when selecting the appropriate resistor.
 
 ## LED Specifications:
 ### Voltage Drop (Forward Voltage):
@@ -258,7 +258,7 @@ When purchasing an LED, it comes with a Datasheet, a document that lists all its
 
 In the Datasheet PDF, you will find tables listing various specifications. The value we need is called Forward Voltage, which represents the Voltage Drop of that specific LED. This value is usually given as a minimum (Min) and maximum (Max) range.
 
-- To calculate the resistor value using Ohm’s Law, we use the minimum Forward Voltage.
+- To calculate the resistor value using Ohm's Law, we use the minimum Forward Voltage.
 - If the datasheet provides different values for Red, Green, and Blue LEDs, use the Red LED value for our example.
 
 ![LED Forward Voltage](https://github.com/anmarjarjees/arduino-code/blob/master/images/forward-voltage.jpg)
@@ -279,7 +279,7 @@ Since we are using an Arduino Uno Board as the voltage source (instead of a 9V b
 ### Key Concept:
 The LED has a specific voltage drop (Forward Voltage). To find the correct voltage to use in the formula, we subtract the LED's Forward Voltage from the Arduino pin voltage:
 
-**Formula for Voltage Used in Ohm’s Law:**
+**Formula for Voltage Used in Ohm's Law:**
 
     > Voltage = Arduino Pin Voltage - LED Forward Voltage
 
@@ -293,12 +293,12 @@ We need to refer to the Arduino Uno documentation to find out the pin voltage.
 **Source:**
 - Check the official [Arduino Uno Rev3 documentation](https://store-usa.arduino.cc/collections/boards/products/arduino-uno-rev3):
     - Scroll down to the "Documentation" tab
-    - Under "Input and Output", you’ll find this text:
+    - Under "Input and Output", you'll find this text:
         > *"Each of the 14 digital pins on the Uno can be used as an input or output using pinMode(), digitalWrite(), and digitalRead() functions. They operate at 5 volts. Each pin can provide or receive 20 mA as recommended operating conditions and has an internal pull-up resistor (disconnected by default) of 20-50kohm."*
 
 ### Conclusion:
 - Arduino Pin Voltage = 5V
-- This is the value we will use in our Ohm’s Law calculations.
+- This is the value we will use in our Ohm's Law calculations.
 
 #### Our Formula with the values:
 Based on the values (what we have searched above) we found:

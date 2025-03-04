@@ -15,7 +15,7 @@ void setup()
 void loop()
 {
     // Incrementing the loop counter by 100 in each iteration
-    counter = counter + 100; // Change#1: Incrementing the loop value by 100
+    counter = counter + 100; // Change#1: Increase the counter by 100 in each loop iteration
 
     // Printing the current blink number to the Serial Monitor
     Serial.print("Blink Number # ");
@@ -28,13 +28,24 @@ void loop()
     Change#2: Reduce the delay time from 1000ms (1 second) to (1000 - counter)ms
     This will make the LED blink faster as the counter increases.
     */
-    delay(1000 - counter);
+    // First Way/Solution (Not Recommended):
+    // delay(1000 - counter);
+    /* 
+    Reason:
+    *******
+    It works until counter >= 1000, 
+    at which point the delay becomes negative, which can cause an issue
+    */
     
+    // Second Way/Solution (Recommended): Ensure it never goes below 0
+    int delayTime = max(1000 - counter, 0); // Ensure delay time never goes negative
+    delay(delayTime);
+
     // Turning the LED off
     digitalWrite(LED, LOW);
     
     /*
-    Change#3: Apply the same reduced delay value for the LED OFF state.
+    Change#3: Use the same decreasing delay value for the LED OFF period
     */
     delay(1000 - counter);
 }
@@ -42,8 +53,8 @@ void loop()
 /*
 NOTE:
 To run this program:
-- Verify the code first by clicking on the verify icon (✓) in the Arduino IDE.
-- Upload the code to the Arduino board by clicking on the upload arrow icon (→).
+- Verify the code first by clicking on the verify icon (check) in the Arduino IDE.
+- Upload the code to the Arduino board by clicking on the upload arrow icon (left-arrow).
 - Open the Serial Monitor Window to view the output:
   - Click on "Tools" > "Serial Monitor"
   - OR use the shortcut (Ctrl + Shift + M)

@@ -1,4 +1,4 @@
-int LED = 8; // Variable named "LED" with the value of "8" (Digital Pin#8), and the data type is integer
+int LED = 8; // Declares an integer variable "LED" to store the digital pin number (8)
 
 // Step#2: Adding an integer variable named "counter" to track the number of blinks
 int counter = 0; // Initializing the counter variable to start from 0
@@ -9,9 +9,10 @@ void setup()
     pinMode(LED, OUTPUT); // Setting LED pin as an OUTPUT
     
     /*
-    Step#1: Initializing the Serial Monitor port rate to 9600 using Serial.begin() function:
+    Step#1: Initializing the Serial Monitor port rate to 9600 using Serial.begin() function
     
-    The Serial.begin() function is used to establish serial communication between the Arduino and the computer.
+    The Serial.begin() function is used to establish serial communication 
+    between the Arduino and the computer.
     It allows sending and receiving messages through the Serial Monitor.
     
     Syntax:
@@ -29,9 +30,9 @@ void loop()
 {
     // Put your main code here, to run repeatedly:
     
-    // Step#3: Increment the loop counter by 1 in every iteration
-    counter = counter + 1;
-    
+    // Step#3: Increment the loop counter by 1 in every iteration.
+    counter = counter + 1; // Alternative shorthand: counter++; 
+
     /*
     Step#4: Print a message with the current value of "counter" to track the blink count.
     
@@ -39,7 +40,7 @@ void loop()
     Serial.println() => Prints text and moves to a new line after printing.
     */
     Serial.print("Blink Number # "); // Printing text value only (String)
-    Serial.println(counter);         // Printing the counter value on a new line
+    Serial.println(counter); // Printing the counter value on a new line
 
     // Turning the LED on
     digitalWrite(LED, HIGH);
@@ -53,10 +54,13 @@ void loop()
 /*
 NOTE:
 To run this program:
-- Verify the code first by clicking on the verify icon (✓) in the Arduino IDE.
-- Upload the code to the Arduino board by clicking on the upload arrow icon (→).
+- Verify the code first by clicking on the verify icon (check) in the Arduino IDE.
+- Upload the code to the Arduino board by clicking on the upload arrow icon (left-arrow).
 - Open the Serial Monitor Window to view the output:
   - Click on "Tools" > "Serial Monitor"
   - OR use the shortcut (Ctrl + Shift + M)
-  - Ensure the baud rate in the Serial Monitor is set to 9600.
+  - Ensure the baud rate in the Serial Monitor is set to 9600.*
+
+* The baud rate is set to "9600" in: Serial.begin(9600);
+This ensures proper communication between the Arduino and the Serial Monitor. 
 */

@@ -5,7 +5,7 @@
 
   This example code is in the public domain.
 
-  https://www.arduino.cc/en/Tutorial/BuiltInExamples/DigitalReadSerial
+  Link: https://www.arduino.cc/en/Tutorial/BuiltInExamples/DigitalReadSerial
 */
 
 // Part2: Adding if condition code

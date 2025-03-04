@@ -46,9 +46,14 @@ void setup()
 
     /*
     Hint:
-    By default, all Arduino (Atmega) pins are set as INPUTS.
+    By default, all Arduino (ATmega)* pins are set as INPUTS.
     This means calling pinMode() is not necessary when using pins as inputs.
     However, it is good practice to explicitly define their mode for clarity.
+
+    * ATmega":
+    > (with a capital "AT"), as used in ATmega328P, ATmega2560,
+    > This is the official naming convention from Microchip (formerly Atmel), 
+    > "Atmel" the manufacturer of ATmega microcontrollers used in Arduino boards.
     */
 }
 
